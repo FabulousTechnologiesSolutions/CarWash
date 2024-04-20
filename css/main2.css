@@ -1,3 +1,8 @@
 .profile-img {
     width: 40px;
 }
+@media screen and (max-width:576px){
+    .border-hide {
+        border: 0 !important;
+    }
+}
