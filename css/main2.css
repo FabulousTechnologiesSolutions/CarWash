@@ -1,6 +1,12 @@
 .profile-img {
     width: 40px;
 }
+.side-nav a {
+    opacity: 0.5;
+}
+.side-nav a.active {
+    opacity: 1;
+}
 @media screen and (max-width:576px){
     .border-hide {
         border: 0 !important;

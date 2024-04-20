@@ -18,72 +18,63 @@
 
 <body>
     <section class="panel-wrapper position-relative d-flex justify-content-between ">
-        <div class="sidebar bg-dark  py-3 px-3">
+        <div class="sidebar bg-white py-3 px-2">
             <div class="sidebar-wrapper h-100 d-flex flex-column">
                 <div class="sidetop">
                     <div class="close text-end d-md-none pointer">
                         <i class="fas fa-times  fs-5"></i>
                     </div>
-                    <div class="logo-dashboard mx-auto d-flex justify-content-center">
-                        <img src="../img/logo.png" alt="logo" class="w-100">
-                    </div>
-                    <div class="side-nav px-1 mt-4">
-                        <a href="" class="d-block small text-decoration-none  my-3">
-                            <img src="../img/cashier-1.png" alt="sidebar link" class="me-2">
+                    <a href="dashboard.html" class="logo-dashboard mb-4 text-decoration-none mx-auto d-flex align-items-center justify-content-center">
+                        <img src="../img/logo.png" alt="logo" class="w-100 me-2">
+                        <span class="fw-bold text-black text-nowrap">Top wash car</span>
+                    </a>
+                    <div class="side-nav px-3 mt-4">
+                        <a href="" class="d-block active fw-bold text-decoration-none text-black my-3">
+                            <img src="../img/dashboard.png" alt="sidebar link" class="me-2">
                             <span>Dashboard</span>
                         </a>
-                        <a href="" class="d-block small text-decoration-none  my-3">
-                            <img src="../img/cashier-2.png" alt="sidebar link" class="me-2">
-                            <span>Admission Tickets</span>
+                        <a href="" class="d-block fw-bold text-decoration-none text-black my-3">
+                            <img src="../img/members.png" alt="sidebar link" class="me-2">
+                            <span>Members</span>
                         </a>
-                        <a href="" class="d-block small text-decoration-none  my-3">
-                            <img src="../img/cashier-3.png" alt="sidebar link" class="me-2">
-                            <span>Receipts Info</span>
+                        <a href="" class="d-block fw-bold text-decoration-none text-black my-3">
+                            <img src="../img/reports.png" alt="sidebar link" class="me-2">
+                            <span>Reports</span>
                         </a>
-                        <a href="" class="d-block small text-decoration-none  my-3">
-                            <img src="../img/cashier-4.png" alt="sidebar link" class="me-2">
-                            <span>Total Cash Collects</span>
-                        </a>
-                        <a href="" class="d-block small text-decoration-none  my-3">
-                            <img src="../img/cashier-4.png" alt="sidebar link" class="me-2">
-                            <span>Total Visitors</span>
+                        <a href="" class="d-block fw-bold text-decoration-none text-black my-3">
+                            <img src="../img/analytics.png" alt="sidebar link" class="me-2">
+                            <span>Analytic</span>
                         </a>
                     </div>
                 </div>
-                <a href="" class="mt-auto d-block pb-2 text-decoration-none ">
+                <!-- <a href="" class="mt-auto d-block pb-2 text-decoration-none ">
                     <img src="../img/logout.png" alt="sidebar link" class="me-2">
                     <span>Logout</span>
-                </a>
+                </a> -->
             </div>
         </div>
         <div class="main">
             <div
-                class="nav bg-warning px-3 px-xl-4 py-3 d-flex flex-nowrap  align-items-center justify-content-between">
-                <p class="mb-0  d-none d-sm-block fw-md fs-6 me-1">Welcome to User name</p>
-                <p class="mb-0  d-sm-none fw-md fs-6 me-1">User name</p>
+                class="nav  px-3 px-xl-4 py-3 d-flex flex-nowrap  align-items-center justify-content-between">
+                <p class="mb-0 d-sm-block fw-md fs-6 me-1 text-secondary fw-bold">Welcome Francisco Morris <span>(Admin)</span></p>
+                <p class="mb-0  d-sm-none fw-md fs-6 me-1"></p>
                 <div class="d-flex align-items-center">
-                    <div class="pointer toggler d-md-none me-3">
-                        <img src="../img/toggler.png" alt="toggler" class="nav-icon">
+                    <div class="pointer toggler d-md-none">
+                        <i class="fa-solid fa-bars fs-4"></i>
                     </div>
                     <a href="#" class="d-flex align-items-center text-decoration-none ">
-                        <div class="nav-profile me-sm-2">
-                            <img src="../img/profiile-nav.png" alt="profile">
-                        </div>
                         <div class=" d-none d-sm-flex align-items-center">
-                            <div class="me-2">
-                                <p class="small mb-1 fw-md">
-                                    User name here
-                                </p>
-                                <p class="ex-small mb-0 text-yellow fw-md">
-                                    wade.warren@mail.com
-                                </p>
+                            <div class="d-none d-md-flex align-items-center">
+                                <a href="studentlogin.html" class="text-decoration-none">
+                                    <img src="../img/profile.png" alt="profile" class="rounded-circle profile-img">
+                                    <i class="fa-solid fa-chevron-down  text-black"></i>
+                                </a>
                             </div>
-                            <img src="../img/CaretDown.png" alt="caret" class="nav-icon">
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="content  pt-2">
+            <div class="content px-3 px-xl-4">
                 <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa voluptatem quam fugiat
                     dignissimos labore amet quo sint tempore vero, eum laboriosam. Ipsa possimus sint cupiditate eos
                     dignissimos quisquam molestiae beatae.</p>

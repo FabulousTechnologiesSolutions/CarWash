@@ -116,7 +116,7 @@ textarea{
     max-width: 60px;
 }
 .logo-dashboard {
-    max-width: 140px;
+    max-width: 80px;
 }
 .side-nav img {
     width: 16px;
@@ -131,7 +131,7 @@ textarea{
     width: 16px;
 }
 .content {
-    max-height: calc(100dvh - 114px);
+    max-height: calc(100dvh - 86px);
     overflow: auto;
     margin-top: 10px
 }
@@ -153,25 +153,26 @@ textarea{
 @media screen and (max-width:767px) {
     .sidebar {
         position: absolute;
-        margin-top: 80px;
-        height: calc(100dvh - 100px);
+        margin-top: 0px;
+        height: calc(100dvh - 0px);
         display: none;
     }
     .main {
         width: calc(100% - 0px);
         margin-left: 0px;
     }
-    .panel-wrapper {
-        padding: 10px 10px;
-    }
+    
     .content {
-        margin: 8px 10px 0;
-        max-height: calc(100dvh - 109px);
+        margin: 8px 0px 0;
+        max-height: calc(100dvh - 80px);
+    }
+    .sidebar {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
     }
 }
 @media screen and (max-width:480px) {
     .sidebar {
-        max-width: calc(100% - 20px);
+        max-width: calc(100% - 0px);
     }
 }
 @media screen and (min-width:768px) {
