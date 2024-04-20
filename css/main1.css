@@ -23,3 +23,11 @@
 .page-link{
     color: black;
 }
+.box1{
+    height: calc(100dvh - 110px);
+}
+.info{
+    border: dashed 3px #d1bdbd;
+    border-radius: 30px;
+    padding: 70px 120px;
+}
