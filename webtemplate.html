@@ -14,32 +14,38 @@
     <link rel="stylesheet" href="../css/main2.css">
     <title>Home</title>
 </head>
-
-<body>
-
-    <section class="top-sec">
-        <nav class="navbar navbar-expand-md ">
-            <div class="container-fluid d-flex justify-content-between">
+<body class="bg-grey">
+    <section>
+        <nav class="navbar navbar-expand-sm bg-white">
+            <div class="container-fluid d-flex px-4">
                 <a class="navbar-brand" href="index.html">
                     <img src="img/logo-nav.png" alt="logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="d-flex">
+                    <div class="d-flex d-md-none align-items-center me-2">
+                        <a href="studentlogin.html" class="text-decoration-none">
+                            <img src="img/profile.png" alt="profile" class="rounded-circle profile-img">
+                            <i class="fa-solid fa-chevron-down  text-black"></i>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
                 <div class="collapse navbar-collapse w-auto" id="mynavbar">
-                    <ul class="navbar-nav d-flex align-items-md-center me-auto">
-                        <li class="nav-item border-end pe-3 border-2">
+                    <ul class="navbar-nav my-3 my-sm-0 d-flex align-items-md-center me-auto">
+                        <li class="nav-item border-end border-hide pe-md-3 border-2">
                             <a class="nav-link text-black font-bold" href="courses.html">Top wash car</a>
                         </li>
-                        <li class="nav-item px-3">
+                        <li class="nav-item px-md-3">
                             <a class="nav-link text-black font-bold" href="index.html">Time Cook <span class="ex-small fw-normal">(Car Washer)</span></a>
                         </li>
                     </ul>
                 </div>
                 <div class="d-none d-md-flex align-items-center">
-                    <a href="studentlogin.html">
+                    <a href="studentlogin.html" class="text-decoration-none">
                         <img src="img/profile.png" alt="profile" class="rounded-circle profile-img">
-                        <i class="fa-solid fa-chevron-down"></i>
+                        <i class="fa-solid fa-chevron-down  text-black"></i>
                     </a>
                 </div>
             </div>
