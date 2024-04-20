@@ -131,9 +131,8 @@ textarea{
     width: 16px;
 }
 .content {
-    max-height: calc(100dvh - 86px);
+    max-height: calc(100dvh - 76px);
     overflow: auto;
-    margin-top: 10px
 }
 .content::-webkit-scrollbar {
     width: 8px;
@@ -149,7 +148,10 @@ textarea{
     border: 3px solid var(--blue);
     border-radius: 10px;
 }
-
+.filter {
+    max-width: 400px;
+    width: 100%;
+}
 @media screen and (max-width:767px) {
     .sidebar {
         position: absolute;
@@ -163,8 +165,8 @@ textarea{
     }
     
     .content {
-        margin: 8px 0px 0;
-        max-height: calc(100dvh - 80px);
+        margin: 0;
+        max-height: calc(100dvh - 72px);
     }
     .sidebar {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
