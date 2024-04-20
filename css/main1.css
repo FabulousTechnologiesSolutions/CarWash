@@ -1,0 +1,25 @@
+.box{
+    height: calc(100dvh - 210px);
+}
+.customtable th{
+    color:#A1A1AA; 
+}
+.customtable{
+    font-size: 14px;
+    min-width: 900px;
+}
+.customtable tr{
+    vertical-align: middle;
+}
+.customtable th,
+.customtable tr,
+.customtable td{
+    text-wrap: nowrap;
+}
+.tblicon{
+    width: 30px;
+    height: 30px;
+}
+.page-link{
+    color: black;
+}
