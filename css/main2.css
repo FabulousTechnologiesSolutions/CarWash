@@ -11,4 +11,7 @@
     .border-hide {
         border: 0 !important;
     }
+    .box{
+        height: calc(100dvh - 260px);
+    }
 }
