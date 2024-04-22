@@ -24,7 +24,8 @@
                     <div class="close text-end d-md-none pointer">
                         <i class="fas fa-times  fs-5"></i>
                     </div>
-                    <a href="dashboard.html" class="logo-dashboard mb-4 text-decoration-none mx-auto d-flex align-items-center justify-content-center">
+                    <a href="dashboard.html"
+                        class="logo-dashboard mb-4 text-decoration-none mx-auto d-flex align-items-center justify-content-center">
                         <img src="../img/logo.png" alt="logo" class="w-100 me-2">
                         <span class="fw-bold text-black text-nowrap">Top wash car</span>
                     </a>
@@ -51,9 +52,9 @@
             </div>
         </div>
         <div class="main">
-            <div
-                class="nav  px-3 px-xl-4 py-3 d-flex flex-nowrap  align-items-center justify-content-between">
-                <p class="mb-0 d-sm-block fw-md fs-6 me-1 text-secondary fw-bold">Welcome Francisco Morris <span>(Admin)</span></p>
+            <div class="nav  px-3 px-xl-4 py-3 d-flex flex-nowrap  align-items-center justify-content-between">
+                <p class="mb-0 d-sm-block fw-md fs-6 me-1 text-secondary fw-bold">Welcome Francisco Morris
+                    <span>(Admin)</span></p>
                 <p class="mb-0  d-sm-none fw-md fs-6 me-1"></p>
                 <div class="d-flex align-items-center">
                     <div class="pointer toggler d-md-none">
@@ -75,18 +76,20 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <h3>Dashboard</h3>
                     <div class="search filter pe-3">
-                        <div class="border border-1 border-black ms-3 w-100 px-3 py-2 rounded-3 d-flex align-items-center">
+                        <div
+                            class="border border-1 border-black ms-3 w-100 px-3 py-2 rounded-3 d-flex align-items-center">
                             <label for="search"><i class="fa-solid fa-magnifying-glass text-secondary me-2"></i></label>
-                            <input type="text" id="search" class="w-100 focus-none border-0" placeholder="e.g., Date Range, licence Plate Number">
+                            <input type="text" id="search" class="w-100 focus-none border-0"
+                                placeholder="e.g., Date Range, licence Plate Number">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-8">
+                <div class="row d-flex">
+                    <div class="col-4">
                         <div class="row">
-                            <div class="col-lg-5 col-sm-6">
+                            <div class="col-12">
                                 <div class="rounded-4 shadow">
                                     <div class="d-flex align-items-center justify-content-between p-2">
                                         <div class="d-flex align-items-center">
@@ -97,6 +100,40 @@
                                         </div>
                                     </div>
                                     <canvas id="mychart_1" class="radius-bottom"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="rounded-4 shadow">
+                                    <div class="d-flex align-items-center justify-content-between p-2">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ps-2">
+                                                <p class="text-black mb-0 ">Active Users</p>
+                                                <span class="text-black mb-0 fs-2">27/80</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas id="mychart_2" class="radius-bottom"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="rounded-4 shadow">
+                                    <div class="d-flex align-items-center justify-content-between p-2">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ps-2">
+                                                <p class="text-black mb-0 ">Active Users</p>
+                                                <span class="text-black mb-0 fs-2">27/80</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas id="mychart_3" class="radius-bottom"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +167,8 @@
                                             <td>+1 252 321 4587</td>
                                             <td>Morris</td>
                                             <td>
-                                                <button class="rounded-pill bg-grey text-center px-3 border-0 text-black mb-0">
+                                                <button
+                                                    class="rounded-pill bg-grey text-center px-3 border-0 text-black mb-0">
                                                     Under view
                                                 </button>
                                             </td>
@@ -157,19 +195,19 @@
                 <div class="container-fluid px-4 d-flex justify-content-end w-100">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination my-2">
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
-                            </a>
-                          </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                            </a>
-                          </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -184,30 +222,29 @@
     <script src="../js/main.js"></script>
     <script>
         const monthNames = [
-          '', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+            '', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
         ];
         const dataValues = Array.from({ length: 13 }).fill(50);
         const aValues = Array.from({ length: 12 }, (_, i) => i * 10);
         const bValues = Array.from({ length: 12 }, (_, i) => i * 20);
-        const zvalues = document.getElementById("mychart_1").getContext("2d");
-        const gradientFill = zvalues.createLinearGradient(0, 0, 0, zvalues.canvas.height);
-        gradientFill.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
-        gradientFill.addColorStop(1, "rgba(255, 255, 255, 0)");
-    
+
+        const zvalues1 = document.getElementById("mychart_1").getContext("2d");
+        const gradientFill1 = zvalues1.createLinearGradient(0, 0, 0, zvalues1.canvas.height);
+        gradientFill1.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
+        gradientFill1.addColorStop(1, "rgba(255, 255, 255, 0)");
+
         new Chart("mychart_1", {
             type: "line",
             data: {
                 labels: aValues,
-                datasets: [
-                    {
-                        data: [11, 12, 11, 11, 12,11, 12, 11, 12, 12,11, 12,5],
-                        label: 'Users',
-                        borderColor: "#0062FF",
-                        pointBackgroundColor: "#0062FF",
-                        fill: true,
-                        backgroundColor: gradientFill,
-                    },
-                ],
+                datasets: [{
+                    data: [11, 12, 11, 11, 12, 11, 12, 11, 12, 12, 11, 12, 5],
+                    label: 'Users',
+                    borderColor: "#0062FF",
+                    pointBackgroundColor: "#0062FF",
+                    fill: true,
+                    backgroundColor: gradientFill1,
+                },],
             },
             options: {
                 plugins: {
@@ -219,16 +256,62 @@
                     },
                 },
                 legend: {
-                   display: true 
+                    display: true
                 },
                 elements: {
                     line: {
-                        tension: 0.5, 
+                        tension: 0.5,
                     },
                 },
                 scales: {
                     xAxes: [{
-                        display: false, 
+                        display: false,
+                    }],
+                    yAxes: [{
+                        display: false,
+                    }],
+                },
+            },
+        });
+
+        const zvalues2 = document.getElementById("mychart_2").getContext("2d");
+        const gradientFill2 = zvalues2.createLinearGradient(0, 0, 0, zvalues2.canvas.height);
+        gradientFill2.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
+        gradientFill2.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+        new Chart("mychart_2", {
+            type: "line",
+            data: {
+                labels: aValues,
+                datasets: [{
+                    data: [11, 12, 11, 11, 12, 11, 12, 11, 12, 12, 11, 12, 5],
+                    label: 'Users',
+                    borderColor: "#0062FF",
+                    pointBackgroundColor: "#0062FF",
+                    fill: true,
+                    backgroundColor: gradientFill2,
+                },],
+            },
+            options: {
+                plugins: {
+                    datalabels: {
+                        color: "black",
+                        font: {
+                            weight: "bold",
+                        },
+                    },
+                },
+                legend: {
+                    display: true
+                },
+                elements: {
+                    line: {
+                        tension: 0.5,
+                    },
+                },
+                scales: {
+                    xAxes: [{
+                        display: false,
                     }],
                     yAxes: [{
                         display: false,
@@ -237,6 +320,8 @@
             },
         });
     </script>
-    
+
+
 </body>
+
 </html>
