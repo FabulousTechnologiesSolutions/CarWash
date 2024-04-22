@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <div class="row d-flex">
+                <div class="row d-flex p-3">
                     <div class="col-4">
                         <div class="row">
                             <div class="col-12">
@@ -95,7 +95,7 @@
                                         <div class="d-flex align-items-center">
                                             <div class="ps-2">
                                                 <p class="text-black mb-0 ">Active Users</p>
-                                                <span class="text-black mb-0 fs-2">27/80</span>
+                                                <span class="text-black mb-0 fs-5">27/80</span>
                                             </div>
                                         </div>
                                     </div>
@@ -111,8 +111,8 @@
                                     <div class="d-flex align-items-center justify-content-between p-2">
                                         <div class="d-flex align-items-center">
                                             <div class="ps-2">
-                                                <p class="text-black mb-0 ">Active Users</p>
-                                                <span class="text-black mb-0 fs-2">27/80</span>
+                                                <p class="text-black mb-0 ">No Of Repairs</p>
+                                                <span class="text-black mb-0 fs-5">57/80</span>
                                             </div>
                                         </div>
                                     </div>
@@ -128,8 +128,8 @@
                                     <div class="d-flex align-items-center justify-content-between p-2">
                                         <div class="d-flex align-items-center">
                                             <div class="ps-2">
-                                                <p class="text-black mb-0 ">Active Users</p>
-                                                <span class="text-black mb-0 fs-2">27/80</span>
+                                                <p class="text-black mb-0 ">Activity</p>
+                                                <span class="text-black mb-0 fs-5">Total Activity</span>
                                             </div>
                                         </div>
                                     </div>
@@ -227,12 +227,12 @@
         const dataValues = Array.from({ length: 13 }).fill(50);
         const aValues = Array.from({ length: 12 }, (_, i) => i * 10);
         const bValues = Array.from({ length: 12 }, (_, i) => i * 20);
-
+    
         const zvalues1 = document.getElementById("mychart_1").getContext("2d");
         const gradientFill1 = zvalues1.createLinearGradient(0, 0, 0, zvalues1.canvas.height);
         gradientFill1.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
         gradientFill1.addColorStop(1, "rgba(255, 255, 255, 0)");
-
+    
         new Chart("mychart_1", {
             type: "line",
             data: {
@@ -244,7 +244,7 @@
                     pointBackgroundColor: "#0062FF",
                     fill: true,
                     backgroundColor: gradientFill1,
-                },],
+                }, ],
             },
             options: {
                 plugins: {
@@ -273,12 +273,12 @@
                 },
             },
         });
-
+    
         const zvalues2 = document.getElementById("mychart_2").getContext("2d");
         const gradientFill2 = zvalues2.createLinearGradient(0, 0, 0, zvalues2.canvas.height);
         gradientFill2.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
         gradientFill2.addColorStop(1, "rgba(255, 255, 255, 0)");
-
+    
         new Chart("mychart_2", {
             type: "line",
             data: {
@@ -290,7 +290,7 @@
                     pointBackgroundColor: "#0062FF",
                     fill: true,
                     backgroundColor: gradientFill2,
-                },],
+                }, ],
             },
             options: {
                 plugins: {
@@ -319,9 +319,50 @@
                 },
             },
         });
-    </script>
+    
+        const zvalues3 = document.getElementById("mychart_3").getContext("2d");
 
-
+        new Chart("mychart_3", {
+            type: "bar",
+            data: {
+                labels: monthNames.slice(1), // Exclude the empty string at index 0
+                datasets: [{
+                    data: [60, 70, 60, 55, 60, 70, 60, 55,60, 70, 60, 55,],
+                    label: 'Revenue',
+                    backgroundColor: "#00CC99",
+                    borderWidth: 1,
+                }, ],
+            },
+            options: {
+                plugins: {
+                    datalabels: {
+                        color: "black",
+                        font: {
+                            weight: "bold",
+                        },
+                    },
+                },
+                legend: {
+                    display: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        ticks: {
+                            fontColor: "black",
+                        },
+                    }],
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            fontColor: "black",
+                        },
+                    }],
+                },
+            },
+        });
+        </script>
+    
 </body>
 
 </html>
