@@ -164,6 +164,16 @@ textarea{
     max-width: 400px;
     width: 100%;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+textarea::-webkit-scrollbar,
+select {
+    -webkit-appearance: none; /* Remove default arrow button */
+    -moz-appearance: none; /* Remove default arrow button for Firefox */
+    appearance: none; /* Remove default arrow button for other browsers */
+    border: none; /* Remove default border */
+    outline: none; /* Removes the outline when element is focused */
+}
 @media screen and (max-width:767px) {
     .sidebar {
         position: absolute;

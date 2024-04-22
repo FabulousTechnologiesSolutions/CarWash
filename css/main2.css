@@ -7,6 +7,20 @@
 .side-nav a.active {
     opacity: 1;
 }
+.grey-icon {
+    color: #D2D2D2;
+}
+.grey-clr {
+    color: #D2D2D2;
+}
+.inactive-text {
+    color: #cccccc;
+}
+.hyphens {
+    width: 100px;
+    border: 1px dashed #cccc;
+    height: 1px;
+}
 @media screen and (max-width:576px){
     .border-hide {
         border: 0 !important;
