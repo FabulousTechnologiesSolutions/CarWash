@@ -50,7 +50,8 @@
         <div class="main">
             <div class="nav  px-3 px-xl-4 py-3 d-flex flex-nowrap  align-items-center justify-content-between">
                 <p class="mb-0 d-sm-block fw-md fs-6 me-1 text-secondary fw-bold">Welcome Francisco Morris
-                    <span>(Admin)</span></p>
+                    <span>(Admin)</span>
+                </p>
                 <p class="mb-0  d-sm-none fw-md fs-6 me-1"></p>
                 <div class="d-flex align-items-center">
                     <div class="pointer toggler d-md-none">
@@ -72,7 +73,7 @@
                 <div class="container-fluid px-4">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-12 col-sm-6 mt-3 d-flex align-items-center">
-                            <h2 class="me-5">Members</h2>
+                            <h4 class="me-5">Members</h4>
                             <div class="d-flex align-items-center bg-white border border-1 border-black rounded-3 p-2">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 <input type="text" placeholder="Search " class="w-100 mx-2 bg-transparent border-0">
@@ -80,20 +81,21 @@
                         </div>
                         <div class="col-12 col-sm-6 mt-3">
                             <div class="d-flex align-items-center justify-content-center justify-content-sm-end">
-                                <a href="collectinformation.html"class="bg-gold text-decoration-none text-white rounded-3 py-2 px-3">
-                                    Add New Information +
+                                <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                    class="bg-gold text-decoration-none text-white rounded-3 py-2 px-3">
+                                    Add New Member +
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-        
+
             </section>
             <section>
                 <div class="container-fluid px-4">
                     <div class="bg-white border border-1 py-3 ps-3 pe-2 mt-3 rounded-4 box ">
                         <div class="overflow-auto h-100">
-                            <h2>Stuff member List</h2>
+                            <h4>Stuff member List</h4>
                             <div class="table-responsive">
                                 <table class="table customtable">
                                     <thead>
@@ -141,23 +143,69 @@
                 <div class="container-fluid px-4 d-flex justify-content-end w-100">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination my-2">
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
-                            </a>
-                          </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                            </a>
-                          </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </section>
+        </div>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-2">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fs-5" id="staticBackdropLabel">New Member Add</h5>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="row">
+                            <div class="col-6 mt-2">
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" name="fname" class="form-control">
+                            </div>
+                            <div class="col-6 mt-2">
+                                <label for="lname">Last Name</label>
+                                <input type="text" id="lname" name="lname" class="form-control">
+                            </div>
+                            <div class="col-6 mt-2">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                            <div class="col-6 mt-2">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="form-control">
+                            </div>
+                            <div class="col-6 mt-2">
+                                <label for="role">Role</label>
+                                <select name="role" id="role" class="form-control">
+                                    <option value="option1">option1</option>
+                                    <option value="option2">option2</option>
+                                    <option value="option3">option3</option>
+                                </select>
+                            </div>
+                            <div class="col-6 mt-2">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-start">
+                        <button type="button" class="btn bg-gold text-white">Add</button>
+                        <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -166,149 +214,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="../js/main.js"></script>
-    <script>
-        const monthNames = [
-            '', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-        ];
-        const dataValues = Array.from({ length: 13 }).fill(50);
-        const aValues = Array.from({ length: 12 }, (_, i) => i * 10);
-        const bValues = Array.from({ length: 12 }, (_, i) => i * 20);
-    
-        const zvalues1 = document.getElementById("mychart_1").getContext("2d");
-        const gradientFill1 = zvalues1.createLinearGradient(0, 0, 0, zvalues1.canvas.height);
-        gradientFill1.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
-        gradientFill1.addColorStop(1, "rgba(255, 255, 255, 0)");
-    
-        new Chart("mychart_1", {
-            type: "line",
-            data: {
-                labels: aValues,
-                datasets: [{
-                    data: [11, 12, 11, 11, 12, 11, 12, 11, 12, 12, 11, 12, 5],
-                    label: 'Users',
-                    borderColor: "#0062FF",
-                    pointBackgroundColor: "#0062FF",
-                    fill: true,
-                    backgroundColor: gradientFill1,
-                }, ],
-            },
-            options: {
-                plugins: {
-                    datalabels: {
-                        color: "black",
-                        font: {
-                            weight: "bold",
-                        },
-                    },
-                },
-                legend: {
-                    display: true
-                },
-                elements: {
-                    line: {
-                        tension: 0.5,
-                    },
-                },
-                scales: {
-                    xAxes: [{
-                        display: false,
-                    }],
-                    yAxes: [{
-                        display: false,
-                    }],
-                },
-            },
-        });
-    
-        const zvalues2 = document.getElementById("mychart_2").getContext("2d");
-        const gradientFill2 = zvalues2.createLinearGradient(0, 0, 0, zvalues2.canvas.height);
-        gradientFill2.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
-        gradientFill2.addColorStop(1, "rgba(255, 255, 255, 0)");
-    
-        new Chart("mychart_2", {
-            type: "line",
-            data: {
-                labels: aValues,
-                datasets: [{
-                    data: [11, 12, 11, 11, 12, 11, 12, 11, 12, 12, 11, 12, 5],
-                    label: 'Users',
-                    borderColor: "#0062FF",
-                    pointBackgroundColor: "#0062FF",
-                    fill: true,
-                    backgroundColor: gradientFill2,
-                }, ],
-            },
-            options: {
-                plugins: {
-                    datalabels: {
-                        color: "black",
-                        font: {
-                            weight: "bold",
-                        },
-                    },
-                },
-                legend: {
-                    display: true
-                },
-                elements: {
-                    line: {
-                        tension: 0.5,
-                    },
-                },
-                scales: {
-                    xAxes: [{
-                        display: false,
-                    }],
-                    yAxes: [{
-                        display: false,
-                    }],
-                },
-            },
-        });
-    
-        const zvalues3 = document.getElementById("mychart_3").getContext("2d");
 
-        new Chart("mychart_3", {
-            type: "bar",
-            data: {
-                labels: monthNames.slice(1), // Exclude the empty string at index 0
-                datasets: [{
-                    data: [60, 70, 60, 55, 60, 70, 60, 55,60, 70, 60, 55,],
-                    label: 'Revenue',
-                    backgroundColor: "#00CC99",
-                    borderWidth: 1,
-                }, ],
-            },
-            options: {
-                plugins: {
-                    datalabels: {
-                        color: "black",
-                        font: {
-                            weight: "bold",
-                        },
-                    },
-                },
-                legend: {
-                    display: true
-                },
-                scales: {
-                    xAxes: [{
-                        display: true,
-                        ticks: {
-                            fontColor: "black",
-                        },
-                    }],
-                    yAxes: [{
-                        display: true,
-                        ticks: {
-                            fontColor: "black",
-                        },
-                    }],
-                },
-            },
-        });
-        </script>
-    
+
 </body>
 
 </html>
