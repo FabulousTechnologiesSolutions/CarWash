@@ -21,6 +21,10 @@
     border: 1px dashed #cccc;
     height: 1px;
 }
+.carplate img{
+    max-width: 100px;
+    width: 100%;
+}
 @media screen and (max-width:576px){
     .border-hide {
         border: 0 !important;

@@ -26,6 +26,10 @@
 .box1{
     height: calc(100dvh - 110px);
 }
+.box1-inner {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 .info{
     border: dashed 3px #d1bdbd;
     border-radius: 30px;
