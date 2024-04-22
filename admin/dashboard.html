@@ -50,7 +50,8 @@
         <div class="main">
             <div class="nav  px-3 px-xl-4 py-3 d-flex flex-nowrap  align-items-center justify-content-between">
                 <p class="mb-0 d-sm-block fw-md fs-6 me-1 text-secondary fw-bold">Welcome Francisco Morris
-                    <span>(Admin)</span></p>
+                    <span>(Admin)</span>
+                </p>
                 <p class="mb-0  d-sm-none fw-md fs-6 me-1"></p>
                 <div class="d-flex align-items-center">
                     <div class="pointer toggler d-md-none">
@@ -70,7 +71,7 @@
             </div>
             <div class="content px-3 px-xl-4">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h3>Dashboard</h3>
+                    <h4>Dashboard</h4>
                     <div class="search filter pe-3">
                         <div
                             class="border border-1 border-black ms-3 w-100 px-3 py-2 rounded-3 d-flex align-items-center">
@@ -141,6 +142,7 @@
                     <div class="bg-white border border-1 py-3 ps-3 pe-2 mt-3 rounded-4 box ">
                         <div class="overflow-auto h-100">
                             <div class="table-responsive">
+                                <h4>Damage List</h4>
                                 <table class="table customtable">
                                     <thead>
                                         <tr class="thead">
@@ -223,12 +225,12 @@
         const dataValues = Array.from({ length: 13 }).fill(50);
         const aValues = Array.from({ length: 12 }, (_, i) => i * 10);
         const bValues = Array.from({ length: 12 }, (_, i) => i * 20);
-    
+
         const zvalues1 = document.getElementById("mychart_1").getContext("2d");
         const gradientFill1 = zvalues1.createLinearGradient(0, 0, 0, zvalues1.canvas.height);
         gradientFill1.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
         gradientFill1.addColorStop(1, "rgba(255, 255, 255, 0)");
-    
+
         new Chart("mychart_1", {
             type: "line",
             data: {
@@ -240,7 +242,7 @@
                     pointBackgroundColor: "#0062FF",
                     fill: true,
                     backgroundColor: gradientFill1,
-                }, ],
+                },],
             },
             options: {
                 plugins: {
@@ -269,12 +271,12 @@
                 },
             },
         });
-    
+
         const zvalues2 = document.getElementById("mychart_2").getContext("2d");
         const gradientFill2 = zvalues2.createLinearGradient(0, 0, 0, zvalues2.canvas.height);
         gradientFill2.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
         gradientFill2.addColorStop(1, "rgba(255, 255, 255, 0)");
-    
+
         new Chart("mychart_2", {
             type: "line",
             data: {
@@ -286,7 +288,7 @@
                     pointBackgroundColor: "#0062FF",
                     fill: true,
                     backgroundColor: gradientFill2,
-                }, ],
+                },],
             },
             options: {
                 plugins: {
@@ -315,7 +317,7 @@
                 },
             },
         });
-    
+
         const zvalues3 = document.getElementById("mychart_3").getContext("2d");
 
         new Chart("mychart_3", {
@@ -323,11 +325,11 @@
             data: {
                 labels: monthNames.slice(1), // Exclude the empty string at index 0
                 datasets: [{
-                    data: [60, 70, 60, 55, 60, 70, 60, 55,60, 70, 60, 55,],
+                    data: [60, 70, 60, 55, 60, 70, 60, 55, 60, 70, 60, 55,],
                     label: 'Revenue',
                     backgroundColor: "#00CC99",
                     borderWidth: 1,
-                }, ],
+                },],
             },
             options: {
                 plugins: {
@@ -357,8 +359,8 @@
                 },
             },
         });
-        </script>
-    
+    </script>
+
 </body>
 
 </html>
