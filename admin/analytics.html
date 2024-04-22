@@ -70,7 +70,7 @@
             </div>
             <div class="content px-3 px-xl-4">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h3>Dashboard</h3>
+                    <h4>Analytic Reports</h4>
                     <div class="search filter pe-3">
                         <div
                             class="border border-1 border-black ms-3 w-100 px-3 py-2 rounded-3 d-flex align-items-center">
@@ -82,130 +82,78 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <div class="row d-flex p-3">
-                    <div class="col-4">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="rounded-4 shadow">
-                                    <div class="d-flex align-items-center justify-content-between p-2">
-                                        <div class="d-flex align-items-center">
-                                            <div class="ps-2">
-                                                <p class="text-black mb-0 ">Active Users</p>
-                                                <span class="text-black mb-0 fs-5">27/80</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <canvas id="mychart_1" class="radius-bottom"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="rounded-4 shadow">
-                                    <div class="d-flex align-items-center justify-content-between p-2">
-                                        <div class="d-flex align-items-center">
-                                            <div class="ps-2">
-                                                <p class="text-black mb-0 ">No Of Repairs</p>
-                                                <span class="text-black mb-0 fs-5">57/80</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <canvas id="mychart_2" class="radius-bottom"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="rounded-4 shadow">
-                                    <div class="d-flex align-items-center justify-content-between p-2">
-                                        <div class="d-flex align-items-center">
-                                            <div class="ps-2">
-                                                <p class="text-black mb-0 ">Activity</p>
-                                                <span class="text-black mb-0 fs-5">Total Activity</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <canvas id="mychart_3" class="radius-bottom"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="container-fluid px-4">
-                    <div class="bg-white border border-1 py-3 ps-3 pe-2 mt-3 rounded-4 box ">
-                        <div class="overflow-auto h-100">
-                            <div class="table-responsive">
-                                <table class="table customtable">
-                                    <thead>
-                                        <tr class="thead">
-                                            <th>No</th>
-                                            <th>Car Model</th>
-                                            <th>Licence No.</th>
-                                            <th>Entry Date / Time</th>
-                                            <th>Phone Number</th>
-                                            <th>Staff Member</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>RenaultTriber</td>
-                                            <td>Z021AB37X13</td>
-                                            <td>Apr 07, 10:30 AM</td>
-                                            <td>+1 252 321 4587</td>
-                                            <td>Morris</td>
-                                            <td>
-                                                <button
-                                                    class="rounded-pill bg-grey text-center px-3 border-0 text-black mb-0">
-                                                    Under view
-                                                </button>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex justify-content-center align-items-center">
-                                                    <a href="#" class="text-decoration-none bg-grey rounded-3 p-2">
-                                                        <img src="/img/view.png" alt="icon" class="tblicon1">
-                                                    </a>
-                                                    <a href="#" class="text-decoration-none bg-grey rounded-3 p-2 mx-2">
-                                                        <img src="/img/exportb.png" alt="icon" class="tblicon1">
-                                                    </a>
-                                                    <a href="#" class="text-decoration-none bg-grey rounded-3 p-2">
-                                                        <img src="/img/printb.png" alt="icon" class="tblicon1">
-                                                    </a>
+                <div class="row d-flex">
+                    <div class="col-6 d-flex align-items-center justify-content-between">
+                        <div class="col-4">
+                            <div class="row p-2">
+                                <div class="col-12">
+                                    <div class="rounded-4 shadow">
+                                        <div class="d-flex align-items-center justify-content-between p-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="ps-2">
+                                                    <p class="text-black mb-0 ">Active Users</p>
+                                                    <span class="text-black mb-0 fs-5">27/80</span>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                            </div>
+                                        </div>
+                                        <canvas id="mychart_1" class="radius-bottom"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row p-2">
+                                <div class="col-12">
+                                    <div class="rounded-4 shadow">
+                                        <div class="d-flex align-items-center justify-content-between p-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="ps-2">
+                                                    <p class="text-black mb-0 ">No Of Repairs</p>
+                                                    <span class="text-black mb-0 fs-5">57/80</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <canvas id="mychart_2" class="radius-bottom"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row p-2">
+                                <div class="col-12">
+                                    <div class="rounded-4 shadow">
+                                        <div class="d-flex align-items-center justify-content-between p-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="ps-2">
+                                                    <p class="text-black mb-0 ">No Of Repairs</p>
+                                                    <span class="text-black mb-0 fs-5">57/80</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <canvas id="mychart_4" class="radius-bottom"></canvas>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="container-fluid px-4 d-flex justify-content-end w-100">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination my-2">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <div class="col-6 d-flex align-items-center justify-content-between">
+                        <div class="col-12">
+                            <div class="row p-2">
+                                <div class="col-12">
+                                    <div class="rounded-4 shadow">
+                                        <div class="d-flex align-items-center justify-content-between p-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="ps-2">
+                                                    <p class="text-black mb-0 ">Activity</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <canvas id="mychart_3" class="radius-bottom"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -286,6 +234,52 @@
                     pointBackgroundColor: "#0062FF",
                     fill: true,
                     backgroundColor: gradientFill2,
+                }, ],
+            },
+            options: {
+                plugins: {
+                    datalabels: {
+                        color: "black",
+                        font: {
+                            weight: "bold",
+                        },
+                    },
+                },
+                legend: {
+                    display: true
+                },
+                elements: {
+                    line: {
+                        tension: 0.5,
+                    },
+                },
+                scales: {
+                    xAxes: [{
+                        display: false,
+                    }],
+                    yAxes: [{
+                        display: false,
+                    }],
+                },
+            },
+        });
+
+        const zvalues4 = document.getElementById("mychart_4").getContext("2d");
+        const gradientFill4 = zvalues4.createLinearGradient(0, 0, 0, zvalues4.canvas.height);
+        gradientFill4.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
+        gradientFill4.addColorStop(1, "rgba(255, 255, 255, 0)");
+    
+        new Chart("mychart_4", {
+            type: "line",
+            data: {
+                labels: aValues,
+                datasets: [{
+                    data: [11, 12, 11, 11, 12, 11, 12, 11, 12, 12, 11, 12, 5],
+                    label: 'Users',
+                    borderColor: "#0062FF",
+                    pointBackgroundColor: "#0062FF",
+                    fill: true,
+                    backgroundColor: gradientFill4,
                 }, ],
             },
             options: {
