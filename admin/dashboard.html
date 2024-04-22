@@ -82,6 +82,27 @@
                     </div>
                 </div>
             </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-8">
+                        <div class="row">
+                            <div class="col-lg-5 col-sm-6">
+                                <div class="rounded-4 shadow">
+                                    <div class="d-flex align-items-center justify-content-between p-2">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ps-2">
+                                                <p class="text-black mb-0 ">Active Users</p>
+                                                <span class="text-black mb-0 fs-2">27/80</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas id="mychart_1" class="radius-bottom"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div>
                 <div class="container-fluid px-4">
                     <div class="bg-white border border-1 py-3 ps-3 pe-2 mt-3 rounded-4 box ">
@@ -155,10 +176,67 @@
             </div>
         </div>
     </section>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+        const monthNames = [
+          '', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+        ];
+        const dataValues = Array.from({ length: 13 }).fill(50);
+        const aValues = Array.from({ length: 12 }, (_, i) => i * 10);
+        const bValues = Array.from({ length: 12 }, (_, i) => i * 20);
+        const zvalues = document.getElementById("mychart_1").getContext("2d");
+        const gradientFill = zvalues.createLinearGradient(0, 0, 0, zvalues.canvas.height);
+        gradientFill.addColorStop(0.75, "rgba(0, 98, 255, 0.1)");
+        gradientFill.addColorStop(1, "rgba(255, 255, 255, 0)");
+    
+        new Chart("mychart_1", {
+            type: "line",
+            data: {
+                labels: aValues,
+                datasets: [
+                    {
+                        data: [11, 12, 11, 11, 12,11, 12, 11, 12, 12,11, 12,5],
+                        label: 'Users',
+                        borderColor: "#0062FF",
+                        pointBackgroundColor: "#0062FF",
+                        fill: true,
+                        backgroundColor: gradientFill,
+                    },
+                ],
+            },
+            options: {
+                plugins: {
+                    datalabels: {
+                        color: "black",
+                        font: {
+                            weight: "bold",
+                        },
+                    },
+                },
+                legend: {
+                   display: true 
+                },
+                elements: {
+                    line: {
+                        tension: 0.5, 
+                    },
+                },
+                scales: {
+                    xAxes: [{
+                        display: false, 
+                    }],
+                    yAxes: [{
+                        display: false,
+                    }],
+                },
+            },
+        });
+    </script>
+    
 </body>
 </html>

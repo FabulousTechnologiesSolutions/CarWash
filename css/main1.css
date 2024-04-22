@@ -34,3 +34,7 @@
     border-radius: 30px;
     padding: 70px 120px;
 }
+.radius-bottom{
+    border-bottom-left-radius: 19px; 
+    border-bottom-right-radius: 19px; 
+}
