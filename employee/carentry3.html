@@ -147,27 +147,43 @@
         </div>
     </section>
     <div>
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content p-2">
-                    <div class="modal-header border-0">
-                        <h5 class="modal-title fs-5" id="staticBackdropLabel">New Member Add</h5>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <canvas id="signatureCanvas" class="w-100" style="border: 1px solid #000;"></canvas>
+        <div>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content p-2">
+                        <div class="modal-header border-0 pb-0">
+                            <h5 class="modal-title fs-5" id="staticBackdropLabel">Signautre</h5>
                         </div>
-                    </div>
-                    <div class="modal-footer justify-content-start">
-                        <button type="button" class="btn bg-gold text-white">save</button>
-                        <button id="clearButton" class="btn btn-danger">Clear</button>
+                        <div class="modal-body py-0">
+                            <div class="row">
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <p class="mb-0 fs-4 text-secondary">Draw</p>
+                                    <div class="color-options py-2 d-flex align-items-center">
+                                        <button class="color-option rounded-circle border-0 bg-black" data-color="#000000"><span class="icon d-flex align-items-center justify-content-center"></span></button>
+                                        <button class="color-option rounded-circle mx-2 border-0 bg-red" data-color="#FF0505"><span class="icon d-flex align-items-center justify-content-center"></span></button>
+                                        <button class="color-option rounded-circle border-0 bg-blue" data-color="#006ECB"><span class="icon d-flex align-items-center justify-content-center"></span></button>
+                                        <div class="color-selected rounded-circle"></div>
+                                    </div>                                    
+                                </div>
+                                <canvas id="signatureCanvas" class="w-100 border border-1 "></canvas>
+                                <p class="small text-secondary px-0 my-2">
+                                    By signing this document with an electronic signature, I agree that such signature will
+                                    be as valid as
+                                    handwritten signatures to the extent by local law.
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button id="clearButton" class="btn btn-danger">Clear</button>
+                            <button type="button" class="btn bg-gold text-white">save</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <script>
-            // Select the canvas and context
             const canvas = document.getElementById('signatureCanvas');
             const ctx = canvas.getContext('2d');
             canvas.width = 400;
@@ -175,23 +191,37 @@
             let isDrawing = false;
             let lastX = 0;
             let lastY = 0;
+            
+            const colorButtons = document.querySelectorAll('.color-option');
+
+            // Function to set the color of the signature
+            function setColor(color) {
+                ctx.strokeStyle = color;
+            }
+
+            // Event listener for color buttons
+            colorButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const color = button.dataset.color;
+                    setColor(color);
+                });
+            });
 
             function startDrawing(e) {
                 const { clientX, clientY } = e;
-                            const canvasBox = canvas.getBoundingClientRect();
+                const canvasBox = canvas.getBoundingClientRect();
                 const canvasX = canvasBox.left;
                 const canvasY = canvasBox.top;
-            
+
                 // Calculate the position of the mouse pointer relative to the canvas content box
                 const x = clientX - canvasX;
                 const y = clientY - canvasY;
-            
+
                 // Set the initial state of the signature
                 isDrawing = true;
                 lastX = x;
                 lastY = y;
             }
-            
 
             function drawLine(e) {
                 if (!isDrawing) return;
@@ -201,17 +231,22 @@
                 ctx.stroke();
                 [lastX, lastY] = [e.offsetX, e.offsetY];
             }
+
             function stopDrawing() {
                 isDrawing = false;
             }
+
             function clearCanvas() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
             }
+
             canvas.addEventListener('mousedown', startDrawing);
             canvas.addEventListener('mousemove', drawLine);
             canvas.addEventListener('mouseup', stopDrawing);
+
             const clearButton = document.getElementById('clearButton');
             clearButton.addEventListener('click', clearCanvas);
+
             function getSignature() {
                 const signatureCanvas = document.createElement('canvas');
                 signatureCanvas.width = canvas.width;
@@ -219,11 +254,23 @@
                 signatureCanvas.getContext('2d').drawImage(canvas, 0, 0);
                 return signatureCanvas.toDataURL();
             }
+
             const saveButton = document.querySelector('.modal-footer .btn.bg-gold');
             saveButton.addEventListener('click', () => {
                 const signature = getSignature();
                 console.log(signature);
             });
+            colorButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const color = button.dataset.color;
+                    setColor(color);
+                    document.querySelectorAll('.color-option .icon').forEach(icon => {
+                        icon.innerHTML = '';
+                    });
+                    button.querySelector('.icon').innerHTML = '<i class="fa-solid fa-check text-white fw-bold"></i>';
+                });
+            });
+            
         </script>
     </div>
 
