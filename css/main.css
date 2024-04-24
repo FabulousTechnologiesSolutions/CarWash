@@ -76,8 +76,14 @@ textarea{
 .bg-yellow{
     background-color: #FFF500;
 }
+.bg-black{
+    background-color: #000000;
+}
 .bg-red{
     background-color: #FF0505;
+}
+.bg-blue{
+    background-color: #006ECB;
 }
 .ex-small {
   font-size: 10px;
@@ -173,6 +179,10 @@ select {
     appearance: none; /* Remove default arrow button for other browsers */
     border: none; /* Remove default border */
     outline: none; /* Removes the outline when element is focused */
+}
+.color-option{
+    width: 40px;
+    height: 40px;
 }
 @media screen and (max-width:767px) {
     .sidebar {
