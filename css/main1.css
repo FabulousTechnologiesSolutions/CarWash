@@ -46,6 +46,8 @@ input:focus{
     border: none;
     outline: none;
 }
-select{
-    background-color: transparent;
+select:focus{
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
