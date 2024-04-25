@@ -25,6 +25,26 @@
     max-width: 100px;
     width: 100%;
 }
+.bg-orng {
+    background: #FBB91D;
+}
+.logo-login img{
+    max-width: 200px;
+    width: 100%;
+}
+.login-h {
+    min-height: 100dvh;
+}
+.bg-lpink{
+   background: #ffe3dd;
+   height: 10px;
+}
+.bg-progress {
+    background: linear-gradient(to right, #FFBF1A,#FF4080);
+}
+.bg-progress2 {
+    background: linear-gradient(to right, #2FEA9B,#7FDD53);
+}
 @media screen and (max-width:576px){
     .border-hide {
         border: 0 !important;
