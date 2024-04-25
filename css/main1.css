@@ -32,6 +32,7 @@
 .box1-inner {
     overflow-y: auto;
     overflow-x: hidden;
+    padding: 0 18px;
 }
 .info{
     border: dashed 3px #d1bdbd;
@@ -50,4 +51,10 @@ select:focus{
     border: none !important;
     box-shadow: none !important;
     outline: none !important;
+}
+@media screen and (max-width:480px) {
+    .box1{
+        padding-left: 6px;
+        padding-right: 6px;
+    }
 }

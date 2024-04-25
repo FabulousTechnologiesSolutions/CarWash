@@ -208,6 +208,10 @@ select {
     .sidebar {
         max-width: calc(100% - 0px);
     }
+    .logo-dashboard {
+        margin: 0 !important;
+        justify-content: flex-start !important;
+    }
 }
 @media screen and (min-width:768px) {
     .sidebar {
