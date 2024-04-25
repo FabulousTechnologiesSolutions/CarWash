@@ -42,3 +42,12 @@
     border-bottom-left-radius: 19px; 
     border-bottom-right-radius: 19px; 
 }
+input:focus{
+    border: none;
+    outline: none;
+}
+select:focus{
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
