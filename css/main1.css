@@ -42,3 +42,10 @@
     border-bottom-left-radius: 19px; 
     border-bottom-right-radius: 19px; 
 }
+input:focus{
+    border: none;
+    outline: none;
+}
+select{
+    background-color: transparent;
+}
