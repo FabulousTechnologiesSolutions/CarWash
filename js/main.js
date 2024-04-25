@@ -39,5 +39,16 @@ $(".center").slick({
       $(".toggler").show();
       $(".close").hide();
     });
+
+    $(".up").click(function () {
+      $(".logout-btn").toggle();
+      $(".up").toggle();
+      $(".down").toggle();
+    });
+    $(".down").click(function () {
+      $(".logout-btn").toggle();
+      $(".up").toggle();
+      $(".down").toggle();
+    });
   });
   
