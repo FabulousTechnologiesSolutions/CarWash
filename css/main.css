@@ -125,6 +125,7 @@ textarea{
     position: fixed;
     height: calc(100dvh - 0px);
     overflow: auto;
+    z-index: 99;
 }
 .main {
     width: calc(100% - 230px);
