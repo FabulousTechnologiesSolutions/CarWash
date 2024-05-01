@@ -45,11 +45,24 @@
 .bg-progress2 {
     background: linear-gradient(to right, #2FEA9B,#7FDD53);
 }
+.navhght{
+    height: 80px;
+    border: solid;
+}
+.botmdiv{
+    margin-top: 20px;
+    height: calc(100dvh - 120px);
+    border: solid red;
+    overflow: auto;
+}
+.main{
+    height: 100dvh;
+}
 @media screen and (max-width:576px){
     .border-hide {
         border: 0 !important;
     }
     .box{
-        height: calc(100dvh - 260px);
+        height: calc(100dvh - 320px);
     }
 }
