@@ -47,12 +47,10 @@
 }
 .navhght{
     height: 80px;
-    border: solid;
 }
 .botmdiv{
     margin-top: 20px;
     height: calc(100dvh - 120px);
-    border: solid red;
     overflow: auto;
 }
 .main{
