@@ -120,15 +120,16 @@ textarea{
 }
 /* ---------dashboard styling---- */
 .sidebar {
-    max-width: 230px;
+    max-width: 250px;
     width: 100%;
     position: fixed;
     height: calc(100dvh - 0px);
     overflow: auto;
+    z-index: 99;
 }
 .main {
-    width: calc(100% - 230px);
-    margin-left: 230px;
+    width: calc(100% - 250px);
+    margin-left: 250px;
 }
 .profile-side img {
     max-width: 60px;
@@ -211,9 +212,6 @@ select {
     .logo-dashboard {
         margin: 0 !important;
         justify-content: flex-start !important;
-    }
-    .profile,.up,.down {
-        display: none;
     }
 }
 @media screen and (min-width:768px) {
