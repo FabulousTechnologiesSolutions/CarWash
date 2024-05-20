@@ -87,12 +87,14 @@
                                             <div class="row my-3">
                                                 <div class="capture-main">
                                                     <div class="capture my-2">
-                                                        <p id="fileName1" class="mb-0 file-name"></p>
+                                                        <img id="imagePreview1" class="img-preview d-none"
+                                                            alt="Image Preview">
                                                         <label for="capture1"
                                                             class="capture-btn text-white rounded-3 border-0 bg-black px-3 py-2">
                                                             Capture Licence Plate Number
                                                         </label>
-                                                        <input type="file" id="capture1" class="d-none">
+                                                        <input type="file" id="capture1" class="d-none"
+                                                            accept="image/*">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 my-2">
@@ -155,24 +157,28 @@
                                                     <textarea type="text" rows="6" id="info"
                                                         class="border border-1 focus-none w-100 rounded-3 px-3 py-2 ">Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500s, when an unknown printer took a galley of  type and scrambled it to make a type specimen book.</textarea>
                                                 </div>
-                                                <h2 class="fs-6 font-medium">Car Damage Images</h2>
-                                                <div class="d-flex flex-wrap align-items-center ">
-                                                    <div class=" my-2 img-m me-2 d-flex flex-wrap">
+                                                <div class="my-2">
+                                                    <h2 class="fs-6 font-medium">Car Damage Images</h2>
+                                                    <p>Add Multiple images of Damage from Different angles</p>
+                                                    <div class="d-flex flex-wrap align-items-center border border-1 rounded-3">
+                                                        <div class="img-m m-2 d-flex flex-wrap">
+                                                        </div>
+                                                        <i class="fas fa-plus my-2 text-white bg-gold px-2 py-2"
+                                                            id="addInput"></i>
                                                     </div>
-                                                    <i class="fas fa-plus my-2 text-white bg-yellow px-2 py-2" id="addInput"></i>
                                                 </div>
-                                                <div class="row">
-                                                    
-                                                </div>
-                                                <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                                    <div data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="d-flex my-1 my-sm-0 align-items-center"   >
+                                                <div
+                                                    class="d-flex flex-wrap align-items-center justify-content-between">
+                                                    <div data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                                        class="d-flex my-1 my-sm-0 align-items-center">
                                                         <i class="fa-solid fa-circle-plus"></i>
                                                         <p class="mb-0 ms-2">
                                                             Take Customer Signature</p>
                                                     </div>
                                                     <div class="d-flex my-1 my-sm-0 align-items-center">
                                                         <input type="checkbox" id="check">
-                                                        <label for="check" class="ms-2">I agree to the Terms of use</label>
+                                                        <label for="check" class="ms-2">I agree to the Terms of
+                                                            use</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -479,30 +485,48 @@
         });
 
         $(document).ready(function () {
-    $("#addInput").click(function () {
-        var newInput = $('<input type="file" class="d-none" name="images[]" id="imageInput" required>');
-        var newPreview = $('<img src="" alt="Image Preview" class="img-preview d-none me-2">');
-        $(".img-m").append(newInput);
-        $(".img-m").append(newPreview);
-        newInput.change(function () {
-            var fileInput = $(this);
-            var file = fileInput[0].files[0];
-            var preview = fileInput.next(".img-preview");
+            $("#addInput").click(function () {
+                var newInput = $('<input type="file" class="d-none" name="images[]" id="imageInput" required>');
+                var newPreview = $('<img src="" alt="Image Preview" class="img-preview d-none me-2">');
+                $(".img-m").append(newInput);
+                $(".img-m").append(newPreview);
+                newInput.change(function () {
+                    var fileInput = $(this);
+                    var file = fileInput[0].files[0];
+                    var preview = fileInput.next(".img-preview");
+
+                    if (file) {
+                        fileInput.addClass("d-none");
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            preview.attr("src", e.target.result);
+                            preview.removeClass("d-none");
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+                newInput.click();
+            });
+        });
+
+    </script>
+    <script>
+        document.getElementById('capture1').addEventListener('change', function (event) {
+            const fileInput = event.target;
+            const file = fileInput.files[0];
+            const imagePreview = document.getElementById('imagePreview1');
 
             if (file) {
-                fileInput.addClass("d-none");
-                var reader = new FileReader();
+                const reader = new FileReader();
                 reader.onload = function (e) {
-                    preview.attr("src", e.target.result);
-                    preview.removeClass("d-none");
-                };
+                    imagePreview.src = e.target.result;
+                    imagePreview.classList.remove('d-none');
+                }
                 reader.readAsDataURL(file);
+            } else {
+                imagePreview.classList.add('d-none');
             }
         });
-        newInput.click();
-    });
-});
-
     </script>
 </body>
 
