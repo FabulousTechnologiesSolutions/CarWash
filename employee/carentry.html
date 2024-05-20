@@ -156,6 +156,11 @@
                                                         class="border border-1 focus-none w-100 rounded-3 px-3 py-2 ">Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500s, when an unknown printer took a galley of  type and scrambled it to make a type specimen book.</textarea>
                                                 </div>
                                                 <h2 class="fs-6 font-medium">Car Damage Images</h2>
+                                                <div class="d-flex flex-wrap align-items-center ">
+                                                    <div class=" my-2 img-m me-2 d-flex flex-wrap">
+                                                    </div>
+                                                    <i class="fas fa-plus my-2 text-white bg-yellow px-2 py-2" id="addInput"></i>
+                                                </div>
                                                 <div class="row">
                                                     
                                                 </div>
@@ -472,6 +477,32 @@
                 selectedProductField.style.display = 'block';
             }
         });
+
+        $(document).ready(function () {
+    $("#addInput").click(function () {
+        var newInput = $('<input type="file" class="d-none" name="images[]" id="imageInput" required>');
+        var newPreview = $('<img src="" alt="Image Preview" class="img-preview d-none me-2">');
+        $(".img-m").append(newInput);
+        $(".img-m").append(newPreview);
+        newInput.change(function () {
+            var fileInput = $(this);
+            var file = fileInput[0].files[0];
+            var preview = fileInput.next(".img-preview");
+
+            if (file) {
+                fileInput.addClass("d-none");
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.attr("src", e.target.result);
+                    preview.removeClass("d-none");
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        newInput.click();
+    });
+});
+
     </script>
 </body>
 
