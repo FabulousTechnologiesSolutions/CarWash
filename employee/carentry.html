@@ -66,132 +66,411 @@
                             2
                         </div>
                     </div>
-                    <form action="carentry2.html">
-                        <div class="row justify-content-between mt-5 px-sm-4">
-                            <div class="col-lg-6 col-xl-5">
-                                <h2 class="fs-5 font-medium">Enter Car Information</h2>
-                                <div class="d-flex align-items-end">
-                                    <div class="capture-main">
-                                        <div class="capture my-2">
-                                            <p id="fileName1" class="mb-0 file-name"></p>
-                                            <label for="capture1" class="capture-btn text-white rounded-3 border-0 bg-black px-3 py-2">
-                                                Capture Licence Plate Number
-                                            </label>
-                                            <input type="file" id="capture1" class="d-none">
-                                        </div>
-                                    </div>
-                                    <div class="">
-                                        <button type="button"
-                                            class="add-capture my-2 bg-primary border-0 text-white ms-2 px-3 py-2 rounded-3">
-                                            <i class="fa-solid fa-circle-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-        
-                                <div class="row my-4">
-                                    <div class="col-md-6 mt-2">
-                                        <label for="date" class="w-100">Date</label>
-                                        <div class="mt-2 border border-1 d-flex align-items-center rounded-3 px-3">
-                                            <i class="fa-solid fa-calendar me-2 grey-icon"></i>
-                                            <select name="" id="date" class="border-0 w-100 grey-clr form-control">
-                                                <option value="today">Today</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mt-2">
-                                        <label for="time" class="w-100">Time</label>
-                                        <div class="mt-2 border border-1 d-flex align-items-center rounded-3 px-3">
-                                            <i class="fa-solid fa-clock me-2 grey-icon"></i>
-                                            <select name="" id="time" class="border-0 form-control grey-clr">
-                                                <option value="today">Time</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <h2 class="fs-5 font-medium">Customer Details</h2>
-                                <div class="d-flex align-items-end">
-                                    <div class="customer-main">
-                                        <div class="customer my-2">
-                                            <button type="button" class="customer-btn text-white rounded-3 border-0 bg-black px-3 py-2">
-                                                Customer 1
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <button type="button"
-                                            class="add-customer my-2 bg-primary border-0 text-white ms-2 px-3 py-2 rounded-3">
-                                            <i class="fa-solid fa-circle-plus"></i>
-                                        </button>
-                                    </div>
+                    <form action="#">
+                        <div class="row px-3 px-md-5">
+                            <div class="col-12">
+                                <div class="mt-3">
+                                    <label for="selectOption">Damage Type</label>
+                                    <select name="selectOption" id="selectOption" class="form-control">
+                                        <option value="plant">Wash Plant</option>
+                                        <option value="single">Single Car Damaged</option>
+                                        <option value="multiple">Multiple Cars Damaged</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-lg-6 mt-3 mt-lg-0 col-xl-5">
-                                <h2 class="fs-6 font-medium">Car Damage Images</h2>
-                                <div class="info py-5 px-2 px-sm-5">
-                                    <label for="files" class="pointer d-flex flex-column align-items-center m-0 mx-sm-5">
-                                        <i class="fa-solid fa-upload fs-2 text-secondary"></i>
-                                        <p class="my-2 text-secondary fs-6 text-center mt-2">
-                                            I need to be able to put files (JPG, PNG, HEIC, MP4, PDF, MOV) in here
-                                        </p>
-                                        <div class="rounded-3 text-white rounded-1 border-0 bg-black px-4 py-2">
-                                           Add files
+                            <div id="plant" class="product-fields">
+                                <div class="row justify-content-between mt-5 px-sm-4">
+                                    <div class="col-12">
+                                        <div>
+                                            <h2 class="fs-5 font-medium">Enter Car Information <span
+                                                    class="grey-clr fs-6"> (Customer 1)</span></h2>
+                                            <div class="row my-3">
+                                                <div class="capture-main">
+                                                    <div class="capture my-2">
+                                                        <p id="fileName1" class="mb-0 file-name"></p>
+                                                        <label for="capture1"
+                                                            class="capture-btn text-white rounded-3 border-0 bg-black px-3 py-2">
+                                                            Capture Licence Plate Number
+                                                        </label>
+                                                        <input type="file" id="capture1" class="d-none">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="date" class="w-100 font-md">Date</label>
+                                                    <input type="text" id="date"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="08/04/2024">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="time" class="w-100 font-md">Time</label>
+                                                    <input type="text" id="time"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="10:30 AM">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="name" class="w-100 font-md">Name</label>
+                                                    <input type="text" id="name"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="Marko">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="sname" class="w-100 font-md">Surname</label>
+                                                    <input type="text" id="sname"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="Unger">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="company" class="w-100 font-md">Company</label>
+                                                    <input type="text" id="company"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="Micro Design">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="telephone" class="w-100 font-md">Telephone No.</label>
+                                                    <input type="text" id="telephone"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="04824 38 48 62">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="insurance_id" class="w-100 font-md">Insurance ID</label>
+                                                    <input type="text" id="insurance_id"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="C8342837464">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="insurance_com" class="w-100 font-md">Insurance
+                                                        Comapny</label>
+                                                    <input type="text" id="insurance_com"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="Universa">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="fault" class="w-100 font-md">Acknowledgment of Fault
+                                                    </label>
+                                                    <textarea type="text" rows="6" id="fault"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 ">Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500s, when an unknown printer took a galley of  type and scrambled it to make a type specimen book.</textarea>
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="info" class="w-100 font-md">Information</label>
+                                                    <textarea type="text" rows="6" id="info"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 ">Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500s, when an unknown printer took a galley of  type and scrambled it to make a type specimen book.</textarea>
+                                                </div>
+                                                <h2 class="fs-6 font-medium">Car Damage Images</h2>
+                                                <div class="row">
+                                                    
+                                                </div>
+                                                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                                    <div data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="d-flex my-1 my-sm-0 align-items-center"   >
+                                                        <i class="fa-solid fa-circle-plus"></i>
+                                                        <p class="mb-0 ms-2">
+                                                            Take Customer Signature</p>
+                                                    </div>
+                                                    <div class="d-flex my-1 my-sm-0 align-items-center">
+                                                        <input type="checkbox" id="check">
+                                                        <label for="check" class="ms-2">I agree to the Terms of use</label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </label>
-                                    <input type="file" id="files" class="d-none text-white rounded-1 border-0 bg-black px-3 py-2">
+                                    </div>
+
+
                                 </div>
                             </div>
-                        </div>
-                        <div class="mx-sm-4 mt-5 pb-3 d-flex justify-content-end">
-                            <button type="submit" class="bg-gold border-0 text-white rounded-3 py-2 px-5 ">Next</button>
+                            <div id="single" class="product-fields">
+                                <div class="row justify-content-between mt-5 px-sm-4">
+                                    <div class="col-lg-6 col-xl-5">
+                                        <div>
+                                            <h2 class="fs-5 font-medium">Enter Car Information <span
+                                                    class="grey-clr fs-6"> (Customer 1)</span></h2>
+                                            <div class="row my-3">
+                                                <div class="carplate mb-3">
+                                                    <img src="../img/car_plate.png" alt="" class="rounded-3">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="date" class="w-100 font-md">Date</label>
+                                                    <input type="text" id="date"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="08/04/2024">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="time" class="w-100 font-md">Time</label>
+                                                    <input type="text" id="time"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="10:30 AM">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="name" class="w-100 font-md">Name</label>
+                                                    <input type="text" id="name"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="Marko">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="sname" class="w-100 font-md">Surname</label>
+                                                    <input type="text" id="sname"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="Unger">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="company" class="w-100 font-md">Company</label>
+                                                    <input type="text" id="company"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="Micro Design">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="telephone" class="w-100 font-md">Telephone No.</label>
+                                                    <input type="text" id="telephone"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="04824 38 48 62">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="insurance_id" class="w-100 font-md">Insurance ID</label>
+                                                    <input type="text" id="insurance_id"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="C8342837464">
+                                                </div>
+                                                <div class="col-md-6 my-2">
+                                                    <label for="insurance_com" class="w-100 font-md">Insurance
+                                                        Comapny</label>
+                                                    <input type="text" id="insurance_com"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 "
+                                                        value="Universa">
+                                                </div>
+                                                <div class="col-12 my-2">
+                                                    <label for="fault" class="w-100 font-md">Acknowledgment of Fault
+                                                    </label>
+                                                    <textarea type="text" rows="6" id="fault"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 ">Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500s, when an unknown printer took a galley of  type and scrambled it to make a type specimen book.</textarea>
+                                                </div>
+                                                <div class="col-12 my-2">
+                                                    <label for="info" class="w-100 font-md">Information</label>
+                                                    <textarea type="text" rows="6" id="info"
+                                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 ">Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's standard dummy  text ever since the 1500s, when an unknown printer took a galley of  type and scrambled it to make a type specimen book.</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mt-3 mt-lg-0 col-xl-5">
+                                        <h2 class="fs-6 font-medium">Car Damage Images</h2>
+                                        <div class="row">
+                                            <div class="col-6 col-sm-4">
+                                                <img src="../img/car-damage.png" class="rounded-2 w-100 mb-2"
+                                                    alt="car-damage">
+                                            </div>
+                                            <div class="col-6 col-sm-4">
+                                                <img src="../img/car-damage.png" class="rounded-2 w-100 mb-2"
+                                                    alt="car-damage">
+                                            </div>
+                                            <div class="col-6 col-sm-4">
+                                                <img src="../img/car-damage.png" class="rounded-2 w-100 mb-2"
+                                                    alt="car-damage">
+                                            </div>
+                                            <div class="col-6 col-sm-4">
+                                                <img src="../img/car-damage.png" class="rounded-2 w-100 mb-2"
+                                                    alt="car-damage">
+                                            </div>
+                                        </div>
+                                        <div class="mt-3 row">
+                                            <div class="col-sm-6">
+                                                <h3 class="fs-6">
+                                                    Status
+                                                </h3>
+                                                <button
+                                                    class="bg-success border-0 w-100 rounded-3 text-white my-2 px-3 py-2">
+                                                    AUSGEZAHLT
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3 row">
+                                            <div class="col-sm-6">
+                                                <h3 class="fs-6">
+                                                    Take Customer Signature
+                                                </h3>
+                                                <img src="../img/sign.png" class="rounded-2 mb-2" alt="car-damage">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div id="multiple" class="product-fields">
+                                <div class="col-md-6 my-2">
+                                    <label for="sname" class="w-100 font-md">No. Of Cars Damaged</label>
+                                    <input type="number" id="sname"
+                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 ">
+                                </div>
+                            </div>
+                            <div class="mx-sm-4 pb-3 d-flex justify-content-end">
+                                <button type="submit"
+                                    class="bg-gold border-0 text-white rounded-3 py-2 px-5 ">Save</button>
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+    <div>
+        <div>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content p-2">
+                        <div class="modal-header border-0 pb-0">
+                            <h5 class="modal-title fs-5" id="staticBackdropLabel">Signautre</h5>
+                            <i class="fa-solid fs-5 fa-circle-xmark" data-bs-dismiss="modal"></i>
+                        </div>
+                        <div class="modal-body py-0">
+                            <div class="row">
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <p class="mb-0 fs-4 text-secondary">Draw</p>
+                                    <div class="color-options py-2 d-flex align-items-center">
+                                        <button class="color-option rounded-circle border-0 bg-black"
+                                            data-color="#000000"><span
+                                                class="icon d-flex align-items-center justify-content-center"></span></button>
+                                        <button class="color-option rounded-circle mx-2 border-0 bg-red"
+                                            data-color="#FF0505"><span
+                                                class="icon d-flex align-items-center justify-content-center"></span></button>
+                                        <button class="color-option rounded-circle border-0 bg-blue"
+                                            data-color="#006ECB"><span
+                                                class="icon d-flex align-items-center justify-content-center"></span></button>
+                                        <div class="color-selected rounded-circle"></div>
+                                    </div>
+                                </div>
+                                <canvas id="signatureCanvas" class="w-100 border border-1 "></canvas>
+                                <p class="small text-secondary px-0 my-2">
+                                    By signing this document with an electronic signature, I agree that such signature
+                                    will
+                                    be as valid as
+                                    handwritten signatures to the extent by local law.
+                                </p>
+                            </div>
 
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button id="clearButton" class="border-0 bg-transparent">Clear</button>
+                            <button type="button" class="px-3 py-1 border-0 rounded-3 bg-gold text-white">Accept &
+                                Sign</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const canvas = document.getElementById('signatureCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 400;
+            canvas.height = 200;
+            let isDrawing = false;
+            let lastX = 0;
+            let lastY = 0;
+
+            const colorButtons = document.querySelectorAll('.color-option');
+
+            // Function to set the color of the signature
+            function setColor(color) {
+                ctx.strokeStyle = color;
+            }
+
+            // Event listener for color buttons
+            colorButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const color = button.dataset.color;
+                    setColor(color);
+                });
+            });
+
+            function startDrawing(e) {
+                const { clientX, clientY } = e;
+                const canvasBox = canvas.getBoundingClientRect();
+                const canvasX = canvasBox.left;
+                const canvasY = canvasBox.top;
+
+                // Calculate the position of the mouse pointer relative to the canvas content box
+                const x = clientX - canvasX;
+                const y = clientY - canvasY;
+
+                // Set the initial state of the signature
+                isDrawing = true;
+                lastX = x;
+                lastY = y;
+            }
+
+            function drawLine(e) {
+                if (!isDrawing) return;
+                ctx.beginPath();
+                ctx.moveTo(lastX, lastY);
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+                [lastX, lastY] = [e.offsetX, e.offsetY];
+            }
+
+            function stopDrawing() {
+                isDrawing = false;
+            }
+
+            function clearCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', drawLine);
+            canvas.addEventListener('mouseup', stopDrawing);
+
+            const clearButton = document.getElementById('clearButton');
+            clearButton.addEventListener('click', clearCanvas);
+
+            function getSignature() {
+                const signatureCanvas = document.createElement('canvas');
+                signatureCanvas.width = canvas.width;
+                signatureCanvas.height = canvas.height;
+                signatureCanvas.getContext('2d').drawImage(canvas, 0, 0);
+                return signatureCanvas.toDataURL();
+            }
+
+            const saveButton = document.querySelector('.modal-footer .btn.bg-gold');
+            saveButton.addEventListener('click', () => {
+                const signature = getSignature();
+                console.log(signature);
+            });
+            colorButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const color = button.dataset.color;
+                    setColor(color);
+                    document.querySelectorAll('.color-option .icon').forEach(icon => {
+                        icon.innerHTML = '';
+                    });
+                    button.querySelector('.icon').innerHTML = '<i class="fa-solid fa-check text-white fw-bold"></i>';
+                });
+            });
+
+        </script>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="../js/main.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.add-customer').click(function () {
-                var newCustomer = $('.customer').first().clone();
-                var customerCount = $('.customer').length + 1;
-                newCustomer.find('.customer-btn').text('Customer ' + customerCount);
-                $('.customer-main').append(newCustomer);
-            });
-            $('.capture-main input[type="file"]').change(function () {
-            var inputId = $(this).attr('id').replace('capture', ''); // Extract the capture number
-            var fileList = this.files;
-            var fileNames = [];
-            for (var i = 0; i < fileList.length; i++) {
-                fileNames.push(fileList[i].name);
+        var selectOption = document.getElementById('selectOption');
+        var productFields = document.querySelectorAll('.product-fields');
+        productFields.forEach(function (field) {
+            if (field.id !== 'plant') {
+                field.style.display = 'none';
             }
-            $('#fileName' + inputId).text(fileNames.join(', ')); // Update the text of the corresponding <p> tag
         });
-
-        $('.add-capture').click(function () {
-            var newcapture = $('.capture').first().clone();
-            var captureCount = $('.capture').length + 1;
-            newcapture.find('.capture-btn').attr('for', 'capture' + captureCount);
-            newcapture.find('input[type="file"]').attr('id', 'capture' + captureCount).attr('name', 'capture' + captureCount).val(''); // Reset the input value
-            newcapture.find('p').attr('id', 'fileName' + captureCount).text(''); // Reset the file name
-            $('.capture-main').append(newcapture);
-            
-            // Add change event listener for the newly added file input
-            $('#capture' + captureCount).change(function () {
-                var inputId = $(this).attr('id').replace('capture', ''); // Extract the capture number
-                var fileList = this.files;
-                var fileNames = [];
-                for (var i = 0; i < fileList.length; i++) {
-                    fileNames.push(fileList[i].name);
-                }
-                $('#fileName' + inputId).text(fileNames.join(', ')); // Update the text of the corresponding <p> tag
+        var selectedProductField = document.getElementById('plant');
+        if (selectedProductField) {
+            selectedProductField.style.display = 'block';
+        }
+        selectOption.addEventListener('change', function () {
+            productFields.forEach(function (field) {
+                field.style.display = 'none';
             });
-        });
+            var selectedOption = selectOption.value;
+            var selectedProductField = document.getElementById(selectedOption);
+            if (selectedProductField) {
+                selectedProductField.style.display = 'block';
+            }
         });
     </script>
 </body>
