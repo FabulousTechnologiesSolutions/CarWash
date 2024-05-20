@@ -66,6 +66,11 @@
 .down {
     display: none;
 }
+.img-preview {
+    max-width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
 @media screen and (max-width:576px){
     .border-hide {
         border: 0 !important;
