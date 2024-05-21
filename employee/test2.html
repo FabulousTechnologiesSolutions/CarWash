@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Image Uploads</title>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Include Bootstrap for styling (optional) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main1.css">
+    <link rel="stylesheet" href="../css/main2.css">
+</head>
+<body>
+    <div class="image-upload-container">
+        <!-- First instance of image upload -->
+        <div class="d-flex flex-wrap align-items-center border border-1 p-2 rounded-3">
+            <div class="img-m d-flex flex-wrap"></div>
+            <i class="fas fa-plus text-white bg-danger px-2 py-2 pointer add-input"></i>
+        </div>
+        <!-- Second instance of image upload -->
+        <div class="d-flex flex-wrap align-items-center border border-1 p-2 rounded-3 mt-3">
+            <div class="img-m d-flex flex-wrap"></div>
+            <i class="fas fa-plus text-white bg-danger px-2 py-2 pointer add-input"></i>
+        </div>
+        <!-- You can add more instances as needed -->
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".add-input").click(function () {
+                var container = $(this).closest(".d-flex");
+                var newInput = $('<input type="file" class="d-none image-input" name="images[]" required>');
+                var newPreview = $('<img src="" alt="Image Preview" class="img-preview me-2 d-none">');
+                container.find(".img-m").append(newInput);
+                container.find(".img-m").append(newPreview);
+
+                newInput.change(function () {
+                    var fileInput = $(this);
+                    var file = fileInput[0].files[0];
+                    var preview = fileInput.next(".img-preview");
+
+                    if (file) {
+                        fileInput.addClass("d-none");
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            preview.attr("src", e.target.result);
+                            preview.removeClass("d-none");
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                newInput.click();
+            });
+        });
+    </script>
+</body>
+</html>

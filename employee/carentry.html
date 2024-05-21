@@ -91,14 +91,11 @@
                                             <div class="row my-3">
                                                 <div class="capture-main">
                                                     <div class="capture my-2">
-                                                        <img id="imagePreview1" class="img-preview d-none"
-                                                            alt="Image Preview">
-                                                        <label for="capture1"
-                                                            class="capture-btn text-white rounded-3 border-0 bg-black px-3 py-2">
+                                                        <img id="imagePreview1" class="img-preview d-none" alt="Image Preview 1">
+                                                        <label for="capture1" class="capture-btn text-white rounded-3 border-0 bg-black px-3 py-2">
                                                             Capture Licence Plate Number
                                                         </label>
-                                                        <input type="file" id="capture1" class="d-none"
-                                                            accept="image/*">
+                                                        <input type="file" id="capture1" class="d-none" accept="image/*">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 my-2">
@@ -158,13 +155,10 @@
                                                 <div class="my-2">
                                                     <h2 class="fs-6 font-medium">Car Damage Images</h2>
                                                     <p>Add Multiple images of Damage from Different angles</p>
-                                                    <div
-                                                        class="d-flex flex-wrap align-items-center border border-1 p-2 rounded-3">
-                                                        <div class="img-m d-flex flex-wrap">
-                                                        </div>
-                                                        <i class="fas fa-plus text-white bg-gold px-2 py-2"
-                                                            id="addInput"></i>
-                                                    </div>
+                                                    <div class="d-flex flex-wrap align-items-center border border-1 p-2 rounded-3">
+                                                        <div class="img-m d-flex flex-wrap"></div>
+                                                        <i class="fas fa-plus text-white bg-gold px-2 py-2 pointer add-input"></i>
+                                                    </div>  
                                                 </div>
                                                 <div
                                                     class="d-flex flex-wrap align-items-center my-2 justify-content-between">
@@ -206,14 +200,11 @@
                                             <div class="row my-3">
                                                 <div class="capture-main">
                                                     <div class="capture my-2">
-                                                        <img id="imagePreview1" class="img-preview d-none"
-                                                            alt="Image Preview">
-                                                        <label for="capture1"
-                                                            class="capture-btn text-white rounded-3 border-0 bg-black px-3 py-2">
+                                                        <img id="imagePreview2" class="img-preview d-none" alt="Image Preview 2">
+                                                        <label for="capture2" class="capture-btn text-white rounded-3 border-0 bg-black px-3 py-2">
                                                             Capture Licence Plate Number
                                                         </label>
-                                                        <input type="file" id="capture1" class="d-none"
-                                                            accept="image/*">
+                                                        <input type="file" id="capture2" class="d-none" accept="image/*">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 my-2">
@@ -273,12 +264,9 @@
                                                 <div class="my-2">
                                                     <h2 class="fs-6 font-medium">Car Damage Images</h2>
                                                     <p>Add Multiple images of Damage from Different angles</p>
-                                                    <div
-                                                        class="d-flex flex-wrap align-items-center border border-1 p-2 rounded-3">
-                                                        <div class="img-m d-flex flex-wrap">
-                                                        </div>
-                                                        <i class="fas fa-plus text-white bg-gold px-2 py-2"
-                                                            id="addInput"></i>
+                                                    <div class="d-flex flex-wrap align-items-center border border-1 p-2 rounded-3 mt-3">
+                                                        <div class="img-m d-flex flex-wrap"></div>
+                                                        <i class="fas fa-plus text-white bg-gold px-2 py-2 pointer add-input"></i>
                                                     </div>
                                                 </div>
                                                 <div
@@ -372,95 +360,7 @@
                 </div>
             </div>
         </div>
-        <script>
-            const canvas = document.getElementById('signatureCanvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = 400;
-            canvas.height = 200;
-            let isDrawing = false;
-            let lastX = 0;
-            let lastY = 0;
 
-            const colorButtons = document.querySelectorAll('.color-option');
-
-            // Function to set the color of the signature
-            function setColor(color) {
-                ctx.strokeStyle = color;
-            }
-
-            // Event listener for color buttons
-            colorButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const color = button.dataset.color;
-                    setColor(color);
-                });
-            });
-
-            function startDrawing(e) {
-                const { clientX, clientY } = e;
-                const canvasBox = canvas.getBoundingClientRect();
-                const canvasX = canvasBox.left;
-                const canvasY = canvasBox.top;
-
-                // Calculate the position of the mouse pointer relative to the canvas content box
-                const x = clientX - canvasX;
-                const y = clientY - canvasY;
-
-                // Set the initial state of the signature
-                isDrawing = true;
-                lastX = x;
-                lastY = y;
-            }
-
-            function drawLine(e) {
-                if (!isDrawing) return;
-                ctx.beginPath();
-                ctx.moveTo(lastX, lastY);
-                ctx.lineTo(e.offsetX, e.offsetY);
-                ctx.stroke();
-                [lastX, lastY] = [e.offsetX, e.offsetY];
-            }
-
-            function stopDrawing() {
-                isDrawing = false;
-            }
-
-            function clearCanvas() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-            }
-
-            canvas.addEventListener('mousedown', startDrawing);
-            canvas.addEventListener('mousemove', drawLine);
-            canvas.addEventListener('mouseup', stopDrawing);
-
-            const clearButton = document.getElementById('clearButton');
-            clearButton.addEventListener('click', clearCanvas);
-
-            function getSignature() {
-                const signatureCanvas = document.createElement('canvas');
-                signatureCanvas.width = canvas.width;
-                signatureCanvas.height = canvas.height;
-                signatureCanvas.getContext('2d').drawImage(canvas, 0, 0);
-                return signatureCanvas.toDataURL();
-            }
-
-            const saveButton = document.querySelector('.modal-footer .btn.bg-gold');
-            saveButton.addEventListener('click', () => {
-                const signature = getSignature();
-                console.log(signature);
-            });
-            colorButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const color = button.dataset.color;
-                    setColor(color);
-                    document.querySelectorAll('.color-option .icon').forEach(icon => {
-                        icon.innerHTML = '';
-                    });
-                    button.querySelector('.icon').innerHTML = '<i class="fa-solid fa-check text-white fw-bold"></i>';
-                });
-            });
-
-        </script>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -468,22 +368,93 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="../js/main.js"></script>
     <script>
-        document.getElementById('capture1').addEventListener('change', function (event) {
-            const fileInput = event.target;
-            const file = fileInput.files[0];
-            const imagePreview = document.getElementById('imagePreview1');
+        const canvas = document.getElementById('signatureCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 400;
+        canvas.height = 200;
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
 
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    imagePreview.src = e.target.result;
-                    imagePreview.classList.remove('d-none');
-                }
-                reader.readAsDataURL(file);
-            } else {
-                imagePreview.classList.add('d-none');
-            }
+        const colorButtons = document.querySelectorAll('.color-option');
+
+        // Function to set the color of the signature
+        function setColor(color) {
+            ctx.strokeStyle = color;
+        }
+
+        // Event listener for color buttons
+        colorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const color = button.dataset.color;
+                setColor(color);
+            });
         });
+
+        function startDrawing(e) {
+            const { clientX, clientY } = e;
+            const canvasBox = canvas.getBoundingClientRect();
+            const canvasX = canvasBox.left;
+            const canvasY = canvasBox.top;
+
+            // Calculate the position of the mouse pointer relative to the canvas content box
+            const x = clientX - canvasX;
+            const y = clientY - canvasY;
+
+            // Set the initial state of the signature
+            isDrawing = true;
+            lastX = x;
+            lastY = y;
+        }
+
+        function drawLine(e) {
+            if (!isDrawing) return;
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', drawLine);
+        canvas.addEventListener('mouseup', stopDrawing);
+
+        const clearButton = document.getElementById('clearButton');
+        clearButton.addEventListener('click', clearCanvas);
+
+        function getSignature() {
+            const signatureCanvas = document.createElement('canvas');
+            signatureCanvas.width = canvas.width;
+            signatureCanvas.height = canvas.height;
+            signatureCanvas.getContext('2d').drawImage(canvas, 0, 0);
+            return signatureCanvas.toDataURL();
+        }
+
+        const saveButton = document.querySelector('.modal-footer .btn.bg-gold');
+        saveButton.addEventListener('click', () => {
+            const signature = getSignature();
+            console.log(signature);
+        });
+        colorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const color = button.dataset.color;
+                setColor(color);
+                document.querySelectorAll('.color-option .icon').forEach(icon => {
+                    icon.innerHTML = '';
+                });
+                button.querySelector('.icon').innerHTML = '<i class="fa-solid fa-check text-white fw-bold"></i>';
+            });
+        });
+
     </script>
     <script>
         var selectOption = document.getElementById('selectOption');
@@ -510,17 +481,79 @@
 
     </script>
     <script>
+        function setupImagePreview(captureId, imagePreviewId) {
+            document.getElementById(captureId).addEventListener('change', function (event) {
+                const fileInput = event.target;
+                const file = fileInput.files[0];
+                const imagePreview = document.getElementById(imagePreviewId);
+
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        imagePreview.src = e.target.result;
+                        imagePreview.classList.remove('d-none');
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    imagePreview.classList.add('d-none');
+                }
+            });
+        }
+
+        setupImagePreview('capture1', 'imagePreview1');
+        setupImagePreview('capture2', 'imagePreview2');
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".add-input").click(function () {
+                var container = $(this).closest(".d-flex");
+                var newInput = $('<input type="file" class="d-none image-input" name="images[]" required>');
+                var newPreview = $('<img src="" alt="Image Preview" class="img-preview me-2 d-none">');
+                container.find(".img-m").append(newInput);
+                container.find(".img-m").append(newPreview);
+
+                newInput.change(function () {
+                    var fileInput = $(this);
+                    var file = fileInput[0].files[0];
+                    var preview = fileInput.next(".img-preview");
+
+                    if (file) {
+                        fileInput.addClass("d-none");
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            preview.attr("src", e.target.result);
+                            preview.removeClass("d-none");
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                newInput.click();
+            });
+        });
+    </script>
+
+    <script>
         $(document).ready(function () {
             $('#numCars').on('input', function () {
                 var numCars = $(this).val();
                 var carForm = $('.car-form');
                 carForm.empty(); // Clear previous form fields
-
+    
                 for (var i = 0; i < numCars; i++) {
                     var formFields = `
                     <div class="row fields">
                         <div class="col-12 my-2">
                            <h2 class="fs-4"> Car ${i + 1} Details</h2>
+                        </div>
+                        <div class="capture-main">
+                            <div class="capture my-2">
+                                <img id="imagePreview3_${i}" class="img-preview d-none" alt="Image Preview 3">
+                                <label for="capture3_${i}" class="capture-btn text-white rounded-3 border-0 bg-black px-3 py-2">
+                                    Capture Licence Plate Number 3
+                                </label>
+                                <input type="file" id="capture3_${i}" class="d-none" accept="image/*">
+                            </div>
                         </div>
                         <div class="col-md-6 my-2">
                             <label for="date" class="w-100 font-md">Date</label>
@@ -567,64 +600,66 @@
                             <p>Add Multiple images of Damage from Different angles</p>
                             <div class="d-flex flex-wrap align-items-center border border-1 p-2 rounded-3">
                                 <div class="img-m d-flex flex-wrap"></div>
-                                <i class="fas fa-plus text-white bg-gold px-2 py-2 addInput"></i>
+                                <i class="fas fa-plus text-white bg-gold px-2 py-2 addInput3"></i>
                             </div>
                         </div>
                     </div>
                     `;
                     carForm.append(formFields);
+    
+                    // Attach image preview functionality to the newly created input
+                    setupImagePreview(`capture3_${i}`, `imagePreview3_${i}`);
                 }
             });
-
+    
+            function setupImagePreview(captureId, imagePreviewId) {
+                document.getElementById(captureId).addEventListener('change', function (event) {
+                    const fileInput = event.target;
+                    const file = fileInput.files[0];
+                    const imagePreview = document.getElementById(imagePreviewId);
+    
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            imagePreview.src = e.target.result;
+                            imagePreview.classList.remove('d-none');
+                        }
+                        reader.readAsDataURL(file);
+                    } else {
+                        imagePreview.classList.add('d-none');
+                    }
+                });
+            }
+    
         });
     
-        var selectOption = document.getElementById('selectOption');
-        var productFields = document.querySelectorAll('.product-fields');
-        productFields.forEach(function (field) {
-            if (field.id !== 'plant') {
-                field.style.display = 'none';
-            }
-        });
-        var selectedProductField = document.getElementById('plant');
-        if (selectedProductField) {
-            selectedProductField.style.display = 'block';
-        }
-        selectOption.addEventListener('change', function () {
+        $(document).ready(function () {
+            var selectOption = document.getElementById('selectOption');
+            var productFields = document.querySelectorAll('.product-fields');
             productFields.forEach(function (field) {
-                field.style.display = 'none';
+                if (field.id !== 'plant') {
+                    field.style.display = 'none';
+                }
             });
-            var selectedOption = selectOption.value;
-            var selectedProductField = document.getElementById(selectedOption);
+            var selectedProductField = document.getElementById('plant');
             if (selectedProductField) {
                 selectedProductField.style.display = 'block';
             }
-        });
-
-        $(document).ready(function () {
-            $("#addInput").click(function () {
-                var newInput = $('<input type="file" class="d-none" name="images[]" id="imageInput" required>');
-                var newPreview = $('<img src="" alt="Image Preview" class="img-preview me-2 d-none">');
-                $(".img-m").append(newInput);
-                $(".img-m").append(newPreview);
-                newInput.change(function () {
-                    var fileInput = $(this);
-                    var file = fileInput[0].files[0];
-                    var preview = fileInput.next(".img-preview");
-
-                    if (file) {
-                        fileInput.addClass("d-none");
-                        var reader = new FileReader();
-                        reader.onload = function (e) {
-                            preview.attr("src", e.target.result);
-                            preview.removeClass("d-none");
-                        };
-                        reader.readAsDataURL(file);
-                    }
+            selectOption.addEventListener('change', function () {
+                productFields.forEach(function (field) {
+                    field.style.display = 'none';
                 });
-                newInput.click();
+                var selectedOption = selectOption.value;
+                var selectedProductField = document.getElementById(selectedOption);
+                if (selectedProductField) {
+                    selectedProductField.style.display = 'block';
+                }
             });
-        });
+    
 
+        });
     </script>
+
 </body>
+
 </html>
