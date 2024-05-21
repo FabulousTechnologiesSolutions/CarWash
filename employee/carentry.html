@@ -532,16 +532,17 @@
             });
         });
     </script>
-
+    
     <script>
         $(document).ready(function () {
             $('#numCars').on('input', function () {
                 var numCars = $(this).val();
                 var carForm = $('.car-form');
                 carForm.empty(); // Clear previous form fields
-    
+
                 for (var i = 0; i < numCars; i++) {
                     var formFields = `
+
                     <div class="row fields">
                         <div class="col-12 my-2">
                            <h2 class="fs-4"> Car ${i + 1} Details</h2>
@@ -577,7 +578,8 @@
                         </div>
                         <div class="col-md-6 my-2">
                             <label for="telephone" class="w-100 font-md">Telephone No.</label>
-                            <input type="text" class="border border-1 focus-none w-100 rounded-3 px-3 py-2">
+                            <input type="text" id="telephone"
+                                class="border border-1 focus-none w-100 rounded-3 px-3 py-2 ">
                         </div>
                         <div class="col-md-6 my-2">
                             <label for="insurance_id" class="w-100 font-md">Insurance ID</label>
@@ -598,26 +600,26 @@
                         <div class="my-2">
                             <h2 class="fs-6 font-medium">Car Damage Images</h2>
                             <p>Add Multiple images of Damage from Different angles</p>
-                            <div class="d-flex flex-wrap align-items-center border border-1 p-2 rounded-3">
+                            <div class="d-flex flex-wrap align-items-center border border-1 p-2 rounded-3 mt-3">
                                 <div class="img-m d-flex flex-wrap"></div>
-                                <i class="fas fa-plus text-white bg-gold px-2 py-2 addInput3"></i>
+                                <i class="fas fa-plus text-white bg-gold px-2 py-2 pointer add-input"></i>
                             </div>
                         </div>
                     </div>
                     `;
                     carForm.append(formFields);
-    
+
                     // Attach image preview functionality to the newly created input
                     setupImagePreview(`capture3_${i}`, `imagePreview3_${i}`);
                 }
             });
-    
+
             function setupImagePreview(captureId, imagePreviewId) {
                 document.getElementById(captureId).addEventListener('change', function (event) {
                     const fileInput = event.target;
                     const file = fileInput.files[0];
                     const imagePreview = document.getElementById(imagePreviewId);
-    
+
                     if (file) {
                         const reader = new FileReader();
                         reader.onload = function (e) {
@@ -630,33 +632,35 @@
                     }
                 });
             }
-    
-        });
-    
-        $(document).ready(function () {
-            var selectOption = document.getElementById('selectOption');
-            var productFields = document.querySelectorAll('.product-fields');
-            productFields.forEach(function (field) {
-                if (field.id !== 'plant') {
-                    field.style.display = 'none';
-                }
-            });
-            var selectedProductField = document.getElementById('plant');
-            if (selectedProductField) {
-                selectedProductField.style.display = 'block';
-            }
-            selectOption.addEventListener('change', function () {
-                productFields.forEach(function (field) {
-                    field.style.display = 'none';
-                });
-                var selectedOption = selectOption.value;
-                var selectedProductField = document.getElementById(selectedOption);
-                if (selectedProductField) {
-                    selectedProductField.style.display = 'block';
-                }
-            });
-    
 
+            // Delegate the click event to a static parent element
+            $(document).on("click", ".add-input", function () {
+                var container = $(this).closest(".d-flex");
+                var newInput = $('<input type="file" class="d-none image-input" name="images[]" required>');
+                var newPreview = $('<img src="" alt="Image Preview" class="img-preview me-2 d-none">');
+                container.find(".img-m").append(newInput);
+                container.find(".img-m").append(newPreview);
+
+                // Attach change event handler to the newly created input
+                newInput.change(function () {
+                    var fileInput = $(this);
+                    var file = fileInput[0].files[0];
+                    var preview = fileInput.next(".img-preview");
+
+                    if (file) {
+                        fileInput.addClass("d-none");
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            preview.attr("src", e.target.result);
+                            preview.removeClass("d-none");
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                // Trigger click event to open file dialog
+                newInput.click();
+            });
         });
     </script>
 
