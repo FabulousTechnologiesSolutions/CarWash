@@ -47,6 +47,13 @@ input:focus{
     border: none;
     outline: none;
 }
+.capture{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
 select:focus{
     border: none !important;
     box-shadow: none !important;
