@@ -71,6 +71,9 @@
     height: 200px;
     object-fit: contain;
 }
+#selectOption:focus {
+    border: 1px solid #dee2e6 !important;
+}
 @media screen and (max-width:576px){
     .border-hide {
         border: 0 !important;
