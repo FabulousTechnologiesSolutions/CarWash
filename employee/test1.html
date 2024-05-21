@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/main1.css">
     <link rel="stylesheet" href="../css/main2.css">
+    <title>Collect Information</title>
 </head>
 
 <body class="bg-grey">
@@ -52,7 +53,6 @@
             </div>
         </nav>
     </section>
-
     <section>
         <div class="container-fluid px-4">
             <div class="bg-white  py-3 px-3 mt-3 rounded-4 box1 ">
@@ -68,18 +68,14 @@
                     </div>
                     <form action="#">
                         <div class="row px-3 px-md-5">
-                            <div>
-                                <div class="row justify-content-between mt-5 px-sm-4">
-                                    <div class="col-12">
-                                        <div class="my-3">
-                                            <label for="selectOption">Damage Type</label>
-                                            <select name="selectOption" id="selectOption" class="form-control">
-                                                <option value="plant">Wash Plant</option>
-                                                <option value="single">Single Car Damaged</option>
-                                                <option value="multiple">Multiple Cars Damaged</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                            <div class="col-12">
+                                <div class="mt-3 px-4">
+                                    <label for="selectOption">Damage Type</label>
+                                    <select name="selectOption" id="selectOption" class="form-control">
+                                        <option value="plant">Wash Plant</option>
+                                        <option value="single">Single Car Damaged</option>
+                                        <option value="multiple">Multiple Cars Damaged</option>
+                                    </select>
                                 </div>
                             </div>
                             <div id="plant" class="product-fields">
@@ -303,17 +299,10 @@
                                 </div>
                             </div>
                             <div id="multiple" class="product-fields">
-                                <div class="row px-4">
-                                    <div class="mainitem">
-                                        <div class="col-12 my-2">
-                                            <label for="numCars" class="w-100 font-md">No. Of Cars Damaged</label>
-                                            <input type="number" id="numCars"
-                                                class="border border-1 focus-none w-100 rounded-3 px-3 py-2">
-                                        </div>
-                                        <div>
-                                            <div action="" class="car-form"></div>
-                                        </div>
-                                    </div>
+                                <div class="col-md-6 my-2">
+                                    <label for="sname" class="w-100 font-md">No. Of Cars Damaged</label>
+                                    <input type="number" id="sname"
+                                        class="border border-1 focus-none w-100 rounded-3 px-3 py-2 ">
                                 </div>
                             </div>
                             <div class="mx-sm-4 pb-3 d-flex justify-content-end">
@@ -461,123 +450,12 @@
             });
 
         </script>
-
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="../js/main.js"></script>
     <script>
-        document.getElementById('capture1').addEventListener('change', function (event) {
-            const fileInput = event.target;
-            const file = fileInput.files[0];
-            const imagePreview = document.getElementById('imagePreview1');
-
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    imagePreview.src = e.target.result;
-                    imagePreview.classList.remove('d-none');
-                }
-                reader.readAsDataURL(file);
-            } else {
-                imagePreview.classList.add('d-none');
-            }
-        });
-    </script>
-    <script>
-        var selectOption = document.getElementById('selectOption');
-        var productFields = document.querySelectorAll('.product-fields');
-        productFields.forEach(function (field) {
-            if (field.id !== 'plant') {
-                field.style.display = 'none';
-            }
-        });
-        var selectedProductField = document.getElementById('plant');
-        if (selectedProductField) {
-            selectedProductField.style.display = 'block';
-        }
-        selectOption.addEventListener('change', function () {
-            productFields.forEach(function (field) {
-                field.style.display = 'none';
-            });
-            var selectedOption = selectOption.value;
-            var selectedProductField = document.getElementById(selectedOption);
-            if (selectedProductField) {
-                selectedProductField.style.display = 'block';
-            }
-        });
-
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('#numCars').on('input', function () {
-                var numCars = $(this).val();
-                var carForm = $('.car-form');
-                carForm.empty(); // Clear previous form fields
-
-                for (var i = 0; i < numCars; i++) {
-                    var formFields = `
-                    <div class="row fields">
-                        <div class="col-12 my-2">
-                           <h2 class="fs-4"> Car ${i + 1} Details</h2>
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <label for="date" class="w-100 font-md">Date</label>
-                            <input type="text" class="border border-1 focus-none w-100 rounded-3 px-3 py-2">
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <label for="time" class="w-100 font-md">Time</label>
-                            <input type="text" class="border border-1 focus-none w-100 rounded-3 px-3 py-2">
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <label for="name" class="w-100 font-md">Name</label>
-                            <input type="text" class="border border-1 focus-none w-100 rounded-3 px-3 py-2">
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <label for="sname" class="w-100 font-md">Surname</label>
-                            <input type="text" class="border border-1 focus-none w-100 rounded-3 px-3 py-2">
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <label for="company" class="w-100 font-md">Company</label>
-                            <input type="text" class="border border-1 focus-none w-100 rounded-3 px-3 py-2">
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <label for="telephone" class="w-100 font-md">Telephone No.</label>
-                            <input type="text" class="border border-1 focus-none w-100 rounded-3 px-3 py-2">
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <label for="insurance_id" class="w-100 font-md">Insurance ID</label>
-                            <input type="text" class="border border-1 focus-none w-100 rounded-3 px-3 py-2">
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <label for="insurance_com" class="w-100 font-md">Insurance Company</label>
-                            <input type="text" class="border border-1 focus-none w-100 rounded-3 px-3 py-2">
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <label for="fault" class="w-100 font-md">Acknowledgment of Fault</label>
-                            <textarea rows="6" class="border border-1 focus-none w-100 rounded-3 px-3 py-2"></textarea>
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <label for="info" class="w-100 font-md">Information</label>
-                            <textarea rows="6" class="border border-1 focus-none w-100 rounded-3 px-3 py-2"></textarea>
-                        </div>
-                        <div class="my-2">
-                            <h2 class="fs-6 font-medium">Car Damage Images</h2>
-                            <p>Add Multiple images of Damage from Different angles</p>
-                            <div class="d-flex flex-wrap align-items-center border border-1 p-2 rounded-3">
-                                <div class="img-m d-flex flex-wrap"></div>
-                                <i class="fas fa-plus text-white bg-gold px-2 py-2 addInput"></i>
-                            </div>
-                        </div>
-                    </div>
-                    `;
-                    carForm.append(formFields);
-                }
-            });
-
-        });
-    
         var selectOption = document.getElementById('selectOption');
         var productFields = document.querySelectorAll('.product-fields');
         productFields.forEach(function (field) {
@@ -626,5 +504,24 @@
         });
 
     </script>
+    <script>
+        document.getElementById('capture1').addEventListener('change', function (event) {
+            const fileInput = event.target;
+            const file = fileInput.files[0];
+            const imagePreview = document.getElementById('imagePreview1');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.classList.remove('d-none');
+                }
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.classList.add('d-none');
+            }
+        });
+    </script>
 </body>
+
 </html>
